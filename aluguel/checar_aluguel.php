@@ -339,12 +339,13 @@
                               <th>Descrição:</th>
                               <th>Qtde/Estoque:</th>
                               <th>Qtde/Locado:</th>
+                              <th>Status:</th>
                               </tr>
                             </thead>
                             <?php
                         if(!empty($dados['pesqEntreDatas'])){
                           //var_dump($dados);
-                         $query_usuarios = "select p.pro_codigo, p.pro_foto, p.pro_descricao, p.pro_qtde, a.qtde_locado from tb_produto p
+                         $query_usuarios = "select p.pro_codigo, p.pro_foto, p.pro_descricao, p.pro_qtde, a.qtde_locado, alu_status from tb_produto p
                          inner join(select al.pro_codigo, SUM(al.alu_qtde) as qtde_locado from tb_aluguel al
                                     where al.alu_status <> 'DEVOLVIDO' and
                                           al.alu_data_inicial between :data_inicio and :data_final OR 
@@ -358,7 +359,7 @@
                           $result_usuarios->execute();
                            echo "<br>";
                          } 
-                         $query_usuarios = "select p.pro_codigo, p.pro_foto, p.pro_descricao, p.pro_qtde, a.qtde_locado from tb_produto p
+                         $query_usuarios = "select p.pro_codigo, p.pro_foto, p.pro_descricao, p.pro_qtde, a.qtde_locado, al.alu_status from tb_produto p
                          inner join(select al.pro_codigo, SUM(al.alu_qtde) as qtde_locado from tb_aluguel al
                                     where al.alu_status <> 'DEVOLVIDO' and
                                           al.alu_data_inicial between :data_inicio and :data_final OR 
@@ -378,6 +379,7 @@
                         <td> <?php echo $row_usuario['pro_descricao']; ?> </td> 
                         <td> <?php echo $row_usuario['pro_qtde']; ?> </td>
                         <td> <?php echo $row_usuario['qtde_locado']; ?> </td>
+                        <td> <?php echo $row_usuario['alu_status']; ?> </td>
                         </td>
                        <?php  } ?>
 
