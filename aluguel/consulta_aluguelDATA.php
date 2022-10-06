@@ -121,9 +121,10 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
       {
        "processing": true,
         "serverSide": true,
+        "dataType": 'json'
         "ajax":{
             url: 'cadastrar_aluguelDATA.php',
-            type: 'POST',
+            type: 'GET',
         }
     }
     );

@@ -98,7 +98,7 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                   <label for="login" class="form-label">Login:</label>
-
+                  <div class="input-icon icon-user"></div>
                   </div>
                   <div class="input-group input-group-merge">
                     <input
@@ -129,7 +129,7 @@
                 </div>
                 <div class="mb-3">
  
-                  <button class="btn btn-primary d-grid w-100" type="submit">Entrar</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #60467e;">Entrar</button>
                 </div>
               </form>
 

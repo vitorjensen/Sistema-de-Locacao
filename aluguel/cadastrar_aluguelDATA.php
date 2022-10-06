@@ -3,6 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname= "dblocar";
+$dados = [];
 
 $con = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -49,7 +50,10 @@ $resultado_user = mysqli_query($con, $result_user);
 $qnt_linhas = mysqli_num_rows($resultado_user);
 
 $result_usuarios = "SELECT cli_nome, alu_telefone, alu_cpf, alu_rua, alu_numero, alu_bairro, alu_cidade, alu_estado, alu_complemento, alu_data_inicial, alu_evento, alu_data_compra, alu_data_final, pro_codigo, alu_descricao, alu_produto, alu_cor, alu_tipo, alu_tamanho, alu_qtde, 
-alu_valor, alu_valor_sinal, alu_resta_pagar, alu_pago_total, alu_tipo_pagamento, ven_nome, alu_observacao, alu_status FROM tb_aluguel WHERE 1=1";
+alu_valor, alu_valor_sinal, alu_resta_pagar, alu_pago_total, alu_tipo_pagamento, ven_nome, alu_observacao, alu_status FROM tb_aluguel";
+
+
+echo json_encode($resultado_user);
 
 $result_usuarios = mysqli_query($con, $result_usuarios);
 $totalFiltered = mysqli_num_rows($resultado_usuarios);
@@ -60,7 +64,7 @@ $result_usuarios.=" ORDER BY ". $columns[$requestData['order'][0]['column']]." "
 $resultado_usuarios= mysqli_query($con, $result_usuarios);
 
 $dados = array();
-while ($row_usuarios =mysqli_fetch_array($resultado_usuarios) ){
+while ($row_usuarios =mysqli_fetch_array($resultado_user) ){
 	$dados= array();
 	$dados[] = $row_usuarios ['alu_codigo'];  
     $dados[] = $row_usuarios ['cli_nome'];   
@@ -101,7 +105,7 @@ $json_data = array(
   "recordsTotal"=> intval (	$qnt_linhas ),
   "recordsFiltered"=> intval ($totalFiltered ),
   "data" => $dados
-);
+); print($json_data);
 
 echo json_encode($json_data);
 ?>
