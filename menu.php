@@ -153,11 +153,7 @@
                 <div data-i18n="Misc  text-white">Vendedor:</div>
               </a>
               <ul class="menu-sub  text-white">
-                <li class="menu-item  text-white">
-                  <a href="../vendedor/form_vendedor.php" class="menu-link  text-white">
-                    <div data-i18n="Error  text-white">Novo vendedor:</div>
-                  </a>
-                </li>
+               
                 <li class="menu-item  text-white">
                   <a href="../vendedor/consulta_vendedor.php" class="menu-link  text-white">
                     <div data-i18n="Under Maintenance  text-white">Consulta:</div>
