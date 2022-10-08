@@ -1,5 +1,4 @@
 <?PHP
-
 require_once('../conexao/banco.php');
 
 $cons_codigo = isset($_REQUEST['txt_cons_codigo']) ? $_REQUEST['txt_cons_codigo'] : '';
@@ -20,9 +19,8 @@ else
   $sql = "select *, date_format(alu_data_inicial,'%d/%m/%Y') as alu_data_inicial, date_format(alu_evento,'%d/%m/%Y') as alu_evento,
   date_format(alu_data_compra,'%d/%m/%Y') as alu_data_compra, date_format(alu_data_final,'%d/%m/%Y') as alu_data_final
 
-  from tb_aluguel a
-  inner join tb_cliente c on (a.cli_codigo = c.cli_codigo)
-        where a.alu_codigo like '%".$cons_codigo."%'
+  from tb_aluguel
+        where alu_codigo like '%".$cons_codigo."%'
        ";
        
 }
@@ -338,7 +336,7 @@ color: black;
                             <td> <?php echo $dados['cli_nome']; ?> </td> 
                             <td> <?php echo $dados['alu_telefone']; ?> </td>
                             <td> <?php echo $dados['alu_cpf']; ?> </td>
-                            <td> <?php echo utf8_encode($dados['alu_rua']); ?> </td> 
+                            <td> <?php echo $dados['alu_rua']; ?> </td> 
                             <td> <?php echo $dados['alu_numero']; ?> </td>
                             <td> <?php echo $dados['alu_bairro']; ?> </td>  
                             <td> <?php echo $dados['alu_cidade']; ?> </td>
@@ -773,33 +771,12 @@ $('#exampleModal').on('show.bs.modal', function (event) {
   modal.find('.modal-title').text('Editar de ' + recipientnome)  
   modal.find('#recipient-codigo').val(recipient)
   modal.find('#recipient-nome').val(recipientnome)
-  modal.find('#recipient-telefone').val(recipienttelefone)
-  modal.find('#recipient-cpf').val(recipientcpf)
-  modal.find('#recipient-rua').val(recipientrua)
-  modal.find('#recipient-numero').val(recipientnumero)
-  modal.find('#recipient-bairro').val(recipientbairro)
-  modal.find('#recipient-cidade').val(recipientcidade)
-  modal.find('#recipient-estado').val(recipientestado)
-  modal.find('#recipient-complemento').val(recipientcomplemento)
-  modal.find('#recipient-data-inicial').val(recipientdatainicial)
-  modal.find('#recipient-evento').val(recipientevento)
-  modal.find('#recipient-data-compra').val(recipientdatacompra)
-  modal.find('#recipient-data-final').val(recipientdatafinal)
-  modal.find('#recipient-codigo-produto').val(recipientcodigoproduto)
-  modal.find('#recipient-descricao').val(recipientdescricao)
+  modal.find('#recipient-produto-codigo').val(recipientprodutocodigo)
   modal.find('#recipient-produto').val(recipientproduto)
-  modal.find('#recipient-cor').val(recipientcor)
-  modal.find('#recipient-tipo').val(recipienttipo)
-  modal.find('#recipient-tamanho').val(recipienttamanho)
   modal.find('#recipient-qtde').val(recipientqtde)
-  modal.find('#recipient-valor').val(recipientvalor)
-  modal.find('#recipient-valor-sinal').val(recipientvalorsinal)
   modal.find('#recipient-resta-pagar').val(recipientrestapagar)
   modal.find('#recipient-pago-total').val(recipientpagototal)
   modal.find('#recipient-tipo-pagamento').val(recipienttipopagamento)
-  modal.find('#recipient-vendedor').val(recipientvendedor)
-  modal.find('#recipient-observacao').val(recipientobservacao)
-  modal.find('#recipient-status').val(recipientstatus)
 })
 </script>
 

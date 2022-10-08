@@ -230,6 +230,117 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                           <?php } ?>
                           </select>
                         </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="txt_telefone" class="form-label">Telefone:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_telefone"
+                              name="txt_telefone"
+                              onkeypress="mascara(this, '## #####-####')"
+                              maxlength="13"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite o campo Telefone:" 
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_cpf" class="form-label">CPF:</label>
+                            <input class="form-control" type="text" name="txt_cpf" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:" />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_rua" class="form-label">Rua:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_rua"
+                              name="txt_rua"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite o campo Rua:" 
+                              
+                            />
+                          </div>
+
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_numero" class="form-label">Número:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_numero"
+                              name="txt_numero"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite no campo Número:" 
+                              
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_bairro" class="form-label">Bairro:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_bairro"
+                              name="txt_bairro"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite o campo Bairro:" 
+                              
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_cidade" class="form-label">Cidade:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_cidade"
+                              name="txt_cidade"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite o campo Cidade:" 
+                              
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_estado" class="form-label">Estado:</label>
+                            <select id="txt_estado" name="txt_estado" class="select2 form-select" style="background-color: whitesmoke" >
+                            <option value=""></option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                            <option value="DF">DF</option>
+                          </select>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_complemento" class="form-label">Complemento:</label>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="txt_complemento"
+                              name="txt_complemento"
+                              style="background-color: whitesmoke"
+                              placeholder="Digite o campo Complemento:" 
+                              
+                            />
+                          </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_data_inicial" class="form-label">Data/inicial:</label>
                             <input

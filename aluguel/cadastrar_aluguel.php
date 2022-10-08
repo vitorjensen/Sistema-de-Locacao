@@ -38,5 +38,4 @@ mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
 header("Location: consulta_aluguel.php");
 
-
 ?>
