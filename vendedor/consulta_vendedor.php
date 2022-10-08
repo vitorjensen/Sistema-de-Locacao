@@ -200,7 +200,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
           <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
           </li>
           <li class="nav-item">
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="margin: 3px;">Novo</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal1" style="margin: 3px;">Novo</button>
       </li>
         </ul>
        
@@ -232,9 +232,14 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <td> <?php echo $dados['data']; ?> </td>
 
                       <td>
-                      <button type="button" class="btn btn-warning" href="form_atualizar_vendedor.php?ven_codigo=<?php echo $dados['ven_codigo']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" 
+                               data-whatevernome="<?php echo $dados['ven_nome']; ?>"
+                               data-whateverempresa="<?php echo $dados['ven_empresa'];  ?>"
+                               data-whateveremail="<?php echo $dados['ven_email']; ?>"
+                               data-whateverdatacadastro="<?php echo $dados['ven_data_cadastro']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
   <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-</svg></button>
+</svg>
+</button>
 
 
 
@@ -254,7 +259,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
   
                   <?php include("includeMODALCAD.php"); ?>
-
+                  <?php include("includeMODALATUALIZAR.php"); ?>
 
 
 
@@ -282,7 +287,24 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
+  
+  <script type="text/javascript">
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipientnome = button.data('whatevernome')
+  var recipientempresa = button.data('whateverempresa')
+  var recipientemail = button.data('whateveremail')
+  var recipientdatacadastro = button.data('whateverdatacadastro')
+// Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Editar de ' + recipientnome)  
+  modal.find('#recipient-nome').val(recipientnome)
+  modal.find('#recipient-empresa').val(recipientempresa)
+  modal.find('#recipient-email').val(recipientemail)
+  modal.find('#recipient-data-cadastro').val(recipientdatacadastro)
+})
+</script>
   </body>
 </html>

@@ -20,8 +20,9 @@ else
   $sql = "select *, date_format(alu_data_inicial,'%d/%m/%Y') as alu_data_inicial, date_format(alu_evento,'%d/%m/%Y') as alu_evento,
   date_format(alu_data_compra,'%d/%m/%Y') as alu_data_compra, date_format(alu_data_final,'%d/%m/%Y') as alu_data_final
 
-  from tb_aluguel
-        where alu_codigo like '%".$cons_codigo."%'
+  from tb_aluguel a
+  inner join tb_cliente c on (a.cli_codigo = c.cli_codigo)
+        where a.alu_codigo like '%".$cons_codigo."%'
        ";
        
 }
@@ -337,7 +338,7 @@ color: black;
                             <td> <?php echo $dados['cli_nome']; ?> </td> 
                             <td> <?php echo $dados['alu_telefone']; ?> </td>
                             <td> <?php echo $dados['alu_cpf']; ?> </td>
-                            <td> <?php echo $dados['alu_rua']; ?> </td> 
+                            <td> <?php echo utf8_encode($dados['alu_rua']); ?> </td> 
                             <td> <?php echo $dados['alu_numero']; ?> </td>
                             <td> <?php echo $dados['alu_bairro']; ?> </td>  
                             <td> <?php echo $dados['alu_cidade']; ?> </td>
