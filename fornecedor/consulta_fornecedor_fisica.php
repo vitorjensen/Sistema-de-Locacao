@@ -3,8 +3,8 @@ require_once('../conexao/banco.php');
 
 $cons_codigo = isset($_REQUEST['txt_cons_codigo']) ? $_REQUEST['txt_cons_codigo']: '';
 $cons_pessoa = isset($_REQUEST['txt_cons_pessoa']) ? $_REQUEST['txt_cons_pessoa']: '';
-$cons_cnpj = isset($_REQUEST['txt_cons_cnpj']) ? $_REQUEST['txt_cons_cnpj']: '';
-$cons_razao = isset($_REQUEST['txt_cons_razao']) ? $_REQUEST['txt_cons_razao']: '';
+$cons_nome = isset($_REQUEST['txt_cons_nome']) ? $_REQUEST['txt_cons_nome']: '';
+$cons_cpf = isset($_REQUEST['txt_cons_cpf']) ? $_REQUEST['txt_cons_cpf']: '';
 $cons_fantasia = isset($_REQUEST['txt_cons_fantasia']) ? $_REQUEST['txt_cons_fantasia']: '';
 $cons_endereco = isset($_REQUEST['txt_cons_endereco']) ? $_REQUEST['txt_cons_endereco']: '';
 $cons_numero = isset($_REQUEST['txt_cons_numero']) ? $_REQUEST['txt_cons_numero']: '';
@@ -16,17 +16,17 @@ $cons_data_cadastro = isset($_REQUEST['txt_cons_data_cadastro']) ? $_REQUEST['tx
 if(!empty($_GET['search']))
 {
  $data = $_GET['search'];
- $sql = "SELECT * FROM tb_fornecedor WHERE  for_cnpj LIKE '%$data%'";
+ $sql = "SELECT * FROM tb_pessoa_fisica WHERE  for_cpf LIKE '%$data%'";
 }
 else
 {
 $sql = "select *, date_format(for_data_cadastro,'%d/%m/%Y') as data
-        from tb_fornecedor
+        from tb_pessoa_fisica
         where 
           for_codigo like '%".$cons_codigo."%'AND
           for_pessoa like '%".$cons_pessoa."%'AND
-          for_cnpj like '%".$cons_cnpj."%'AND
-          for_razao like '%".$cons_razao."%'AND
+          for_nome like '%".$cons_nome."%'AND
+          for_cpf like '%".$cons_cpf."%'AND
           for_fantasia  like '%".$cons_fantasia."%'AND
           for_endereco like '%".$cons_endereco."%'AND
           for_numero like '%".$cons_numero."%'AND
@@ -211,7 +211,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
 </svg></a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="consulta_fornecedor_fisica.php">Fisica</a></li>
+              <li><a class="dropdown-item" href="consulta_fornecedor.php">Jurídica</a></li>
               
             </ul>
           </li>
@@ -233,8 +233,8 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                           <thead>
                             <tr>
                               <th>#:</th>
-                              <th>Pessoa:</th>
-                              <th>CNPJ:</th>
+                              <th>Nome:</th>
+                              <th>CPF:</th>
                               <th>Razão:</th>
                               <th>Fantasia:</th>
                               <th>Endereço:</th>
@@ -252,8 +252,8 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                               <tr>
                             <td> <?php echo utf8_encode($dados['for_codigo']); ?> </td> 
                             <td> <?php echo utf8_encode($dados['for_pessoa']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_cnpj']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['for_razao']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['for_nome']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['for_cpf']); ?> </td>
                             <td> <?php echo utf8_encode($dados['for_fantasia']); ?> </td> 
                             <td> <?php echo utf8_encode($dados['for_endereco']); ?> </td> 
                             <td> <?php echo utf8_encode($dados['for_numero']); ?> </td>
@@ -328,7 +328,7 @@ search.addEventListener("keydown", function(event){
 
 function searchData()
 {
-   window.location = 'consulta_fornecedor.php?search='+search.value; 
+   window.location = 'consulta_fornecedor_fisica.php?search='+search.value; 
 }
 
 

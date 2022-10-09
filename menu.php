@@ -135,11 +135,7 @@
                 <div data-i18n="Authentications  text-white">Fornecedor:</div>
               </a>
               <ul class="menu-sub  text-white">
-                <li class="menu-item  text-white">
-                  <a href="../fornecedor/form_fornecedor.php" class="menu-link  text-white">
-                    <div data-i18n="Basic  text-white">Novo fornecedor:</div>
-                  </a>
-                </li>
+              
                 <li class="menu-item  text-white">
                   <a href="../fornecedor/consulta_fornecedor.php" class="menu-link  text-white">
                     <div data-i18n="Basic  text-white">Consulta:</div>

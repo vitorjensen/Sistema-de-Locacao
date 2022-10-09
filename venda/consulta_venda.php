@@ -243,32 +243,32 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
 
                             <tbody class="table-border-bottom-0"> 
                               <tr>
-                            <td> <?php echo $dados['vem_codigo']; ?> </td> 
-                            <td> <?php echo $dados['cli_nome']; ?> </td> 
-                            <td> <?php echo $dados['vem_telefone']; ?> </td>
-                            <td> <?php echo $dados['vem_cpf']; ?> </td>
-                            <td> <?php echo $dados['vem_rua']; ?> </td> 
-                            <td> <?php echo $dados['vem_numero']; ?> </td>
-                            <td> <?php echo $dados['vem_bairro']; ?> </td>  
-                            <td> <?php echo $dados['vem_cidade']; ?> </td>
-                            <td> <?php echo $dados['vem_estado']; ?> </td>
-                            <td> <?php echo $dados['vem_complemento']; ?> </td> 
-                            <td> <?php echo $dados['data']; ?> </td>
-                            <td> <?php echo $dados['data2']; ?> </td> 
-                            <td> <?php echo $dados['data3']; ?> </td> 
-                            <td> <?php echo $dados['pro_codigo']; ?> </td>
-                            <td> <?php echo $dados['vem_produto']; ?> </td>
-                            <td> <?php echo $dados['vem_cor']; ?> </td> 
-                            <td> <?php echo $dados['vem_tipo']; ?> </td> 
-                            <td> <?php echo $dados['vem_tamanho']; ?> </td>
-                            <td> <?php echo $dados['vem_qtde']; ?> </td>
-                            <td> <?php echo $dados['vem_valor']; ?> </td> 
-                            <td> <?php echo $dados['vem_valor_sinal']; ?> </td>
-                            <td> <?php echo $dados['vem_resta_pagar']; ?> </td> 
-                            <td> <?php echo $dados['vem_pago_total']; ?> </td> 
-                            <td> <?php echo $dados['vem_tipo_pagamento']; ?> </td>
-                            <td> <?php echo $dados['ven_nome']; ?> </td>
-                            <td> <?php echo $dados['vem_observacao']; ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_codigo']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['cli_nome']) ; ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_telefone']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_cpf']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_rua']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_numero']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_bairro']); ?> </td>  
+                            <td> <?php echo  utf8_encode($dados['vem_cidade']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_estado']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_complemento']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['data']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['data2']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['data3']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['pro_codigo']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_produto']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_cor']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_tipo']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_tamanho']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_qtde']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_valor']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_valor_sinal']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_resta_pagar']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_pago_total']); ?> </td> 
+                            <td> <?php echo  utf8_encode($dados['vem_tipo_pagamento']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['ven_nome']); ?> </td>
+                            <td> <?php echo  utf8_encode($dados['vem_observacao']); ?> </td>
                             <td>
                       <div class="dropdow">
                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -283,14 +283,17 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                      >
                                </div>
                                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" 
-                               data-whatever="<?php echo $dados['vem_codigo']; ?>"
-                               data-whatevernome="<?php echo $dados['cli_nome'];  ?>"
-                               data-whateverprodutocodigo="<?php echo $dados['pro_codigo'];  ?>"
-                               data-whateverproduto="<?php echo $dados['vem_produto']; ?>"
-                               data-whateverqtde="<?php echo $dados['vem_qtde']; ?>" 
-                               data-whateverrestapagar="<?php echo $dados['vem_resta_pagar']; ?>"
-                               data-whateverpagototal="<?php echo $dados['vem_pago_total']; ?>"
-                               data-whatevertipopagamento="<?php echo $dados['vem_tipo_pagamento']; ?>" >Visualizar</button>
+                               data-whatever="<?php echo utf8_encode($dados['vem_codigo']); ?>"
+                               data-whatevernome="<?php echo utf8_encode ($dados['cli_nome']);  ?>"
+                               data-whateverprodutocodigo="<?php echo utf8_encode ($dados['pro_codigo']);  ?>"
+                               data-whateverproduto="<?php echo utf8_encode ($dados['vem_produto']); ?>"
+                               data-whateverqtde="<?php echo utf8_encode ($dados['vem_qtde']); ?>" 
+                               data-whateverrestapagar="<?php echo utf8_encode ($dados['vem_resta_pagar']); ?>"
+                               data-whateverpagototal="<?php echo utf8_encode ($dados['vem_pago_total']); ?>"
+                               data-whatevertipopagamento="<?php echo utf8_encode ($dados['vem_tipo_pagamento']); ?>" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+  <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+  <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+</svg></button>
                               </div>
                              </td>
                            </tr>
