@@ -129,15 +129,10 @@
                 </div>
                 <div class="mb-3">
  
-                  <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #60467e;">Entrar</button>
+                  <button class="btn btn d-grid w-100 text-white" type="submit" style="background-color: #60467e;">Entrar</button>
                 </div>
               </form>
 
-              <p class="text-center">
-                <a href="registrar.php">
-                  <span>Criar conta:</span>
-                </a>
-              </p>
             </div>
           </div>
         

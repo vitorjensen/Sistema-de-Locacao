@@ -154,24 +154,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                 </li>
 
                 <!-- User -->
-                <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="">
-                      <i class="menu-icon tf-icons bx bx-user"></i>
-                    </div>
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                    
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="../index.php">
-                        <i class="bx bx-power-off me-2"></i>
-                        <span class="align-middle">Log Out</span> 
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                <?php include("includeUSER.php"); ?>
                 <!--/ User -->
               </ul>
             </div>
@@ -206,7 +189,9 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
           <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
           </li>
          
-         
+          <li class="nav-item">
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2" style="margin: 3px;">Novo</button>
+      </li>
        
         </form>
       
@@ -217,8 +202,8 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <thead>
                       <tr>
                       <th> <strong> #: </strong></th>
+                      <th> <strong> Nome: </strong></th>
                       <th> <strong> Login: </strong></th>
-                      <th> <strong> Email: </strong></th>
                       <th> <strong> Senha:</strong> </th>
                       </tr>
 
@@ -234,14 +219,10 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <td> <?php echo $dados['log_senha']; ?> </td>
 
                       <td>
-                      <div class="dropdow">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                     <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                    <div class="dropdown-menu">
-                     <a class="dropdown-item" href="delete_login.php?log_codigo=<?php echo $dados['log_codigo']; ?>" onclick="excluir_registro(event)">
-                    <i class="bx bx-trash me-2"></i> Apagar</a    
-                     >
+                      <a type="button" class="btn btn-secondary"  href="delete_login.php?log_codigo=<?php echo $dados['log_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg></a> 
+                     
                                </div>
                               </div>
                              </td>
@@ -251,7 +232,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <?php } ?>
                     </tbody>
                       </table>
-
+                      <?php include("includeMODALCAD.php"); ?>
     <!-- Core JS -->
     
     <!-- build:js assets/vendor/js/core.js -->
@@ -274,6 +255,10 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
     <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
    
-
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
   </body>
 </html>

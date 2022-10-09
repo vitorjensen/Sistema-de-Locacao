@@ -396,14 +396,14 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                           </div>
 
                           <div class="mb-3 col-md-6">
-                            <label for="txt_valor" class="form-label">Valor:</label>
+                            <label for="txt_qtde" class="form-label">QTDE:</label>
                             <input
                               class="form-control"
                               type="text"
-                              id="txt_valor"
-                              name="txt_valor"
+                              id="txt_qtde"
+                              name="txt_qtde"
                               style="background-color: whitesmoke"
-                              placeholder="Digite o campo Valor:"
+                              placeholder="Digite o campo Quantidade:"
                             />
                           </div>
                           <div class="mb-3 col-md-6">
