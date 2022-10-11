@@ -234,7 +234,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                             <tr>
                               <th>#:</th>
                               <th>Pessoa:</th>
-                              <th>CNPJ:</th>
+                              <th>CNPJ/CPF:</th>
                               <th>Razão:</th>
                               <th>Fantasia:</th>
                               <th>Endereço:</th>

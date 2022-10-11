@@ -17,14 +17,14 @@
     <form method="POST" id="exampleModalfornecedor" action="cadastrar_fornecedor.php" enctype="multipart/form-data">
     <div class="row">
                         <div class="mb-3 col-md-6">
-                        <input class="form-check-input" type="radio" name="txt_pessoa" id="txt_pessoa" value="1" onchange="formPessoaFisica();">
+                        <input class="form-check-input" type="radio" name="txt_pessoa" id="txt_pessoa" value="Física" onchange="formPessoaFisica();">
   <label class="form-check-label" for="flexRadioDefault1">
     Física
   </label>
 <br>
 <br>
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="txt_pessoa" id="txt_pessoa" checked value="2" onchange="formPessoaJuridica();">
+  <input class="form-check-input" type="radio" name="txt_pessoa" id="txt_pessoa" checked value="Jurídica" onchange="formPessoaJuridica();">
   <label class="form-check-label" for="flexRadioDefault2">
     Jurídica
   </label>
@@ -34,17 +34,16 @@
       document.getElementById("titulo-pessoa-fisica").style.display = 'block';
       document.getElementById("titulo-pessoa-juridica").style.display = 'none';
 
-      document.getElementById("form-pessoa-fisica-nome").style.display = 'block';
       document.getElementById("form-pessoa-fisica-cpf").style.display = 'block';
       document.getElementById("form-pessoa-juridica-cnpj").style.display = 'none';
-      document.getElementById("form-pessoa-juridica-razao").style.display = 'none';
+      document.getElementById("form-pessoa-juridica-razao").style.display = 'block';
     }
     function formPessoaJuridica(){
       //console.log("carregar formulario pessao juridica");
       document.getElementById("titulo-pessoa-juridica").style.display = 'block';
       document.getElementById("titulo-pessoa-fisica").style.display = 'none';
 
-      document.getElementById("form-pessoa-fisica-nome").style.display = 'none';
+     
       document.getElementById("form-pessoa-fisica-cpf").style.display = 'none';
       document.getElementById("form-pessoa-juridica-cnpj").style.display = 'block';
       document.getElementById("form-pessoa-juridica-razao").style.display = 'block';
@@ -54,17 +53,13 @@
 
 </div>
                           </div>
-                          <div id="form-pessoa-fisica-nome" class="mb-3 col-md-6" style="display: none;">
-                            <label for="txt_cnpj" class="form-label">Nome:</label>
-                            <input class="form-control" type="text" name="txt_nome" id="txt_nome" style="background-color: whitesmoke" placeholder="Digite o campo nome:"/>
-                          </div>
                           <div id="form-pessoa-fisica-cpf" class="mb-3 col-md-6" style="display: none;">
                             <label for="txt_cnpj" class="form-label">CPF:</label>
-                            <input class="form-control" type="text" onblur="checkCPF(this.value)" data-mask="000.000.000-00" name="txt_cpf" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:"/>
+                            <input class="form-control" type="text" onblur="checkCPF(this.value)" data-mask="000.000.000-00" name="txt_cnpj" id="txt_cnpj" style="background-color: whitesmoke" placeholder="Digite o campo CPF:"/>
                           </div>
                           <div id="form-pessoa-juridica-cnpj"class="mb-3 col-md-6" style="display: none;">
-                            <label for="txt_cnpj" class="form-label">CNPJ:</label>
-                            <input class="form-control" type="text" onblur="checkCnpj(this.value)" data-mask="00.000.000/0000-00" name="txt_cnpj" id="txt_cnpj" style="background-color: whitesmoke" placeholder="Digite o campo CNPJ:"/>
+                            <label for="txt_cnpj_cpf" class="form-label">CNPJ:</label>
+                            <input class="form-control" type="text" onblur="checkCnpj(this.value)" data-mask="00.000.000/0000-00" name="txt_cnpj_cpf" id="txt_cnpj_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CNPJ:"/>
                           </div>
                           <div id="form-pessoa-juridica-razao"class="mb-3 col-md-6" style="display: none;">
                             <label for="razao" class="form-label">Razão:</label>
