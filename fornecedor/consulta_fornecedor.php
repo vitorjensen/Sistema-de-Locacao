@@ -251,31 +251,21 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                             <tbody class="table-border-bottom-0"> 
                               <tr>
                             <td> <?php echo utf8_encode($dados['for_codigo']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_pessoa']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_cnpj']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['for_razao']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['for_fantasia']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_endereco']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_numero']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['for_cidade']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['for_estado']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['for_telefone']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['data']); ?> </td>
+                            <td> <?php echo $dados['for_pessoa']; ?> </td> 
+                            <td> <?php echo $dados['for_cnpj']; ?> </td>
+                            <td> <?php echo $dados['for_razao']; ?> </td>
+                            <td> <?php echo $dados['for_fantasia']; ?> </td> 
+                            <td> <?php echo $dados['for_endereco']; ?> </td> 
+                            <td> <?php echo $dados['for_numero']; ?> </td>
+                            <td> <?php echo $dados['for_cidade']; ?> </td>
+                            <td> <?php echo $dados['for_estado']; ?> </td> 
+                            <td> <?php echo $dados['for_telefone']; ?> </td> 
+                            <td> <?php echo $dados['data']; ?> </td>
 
                           <td>
-                          <div class="dropdow">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                          <a class="dropdown-item" href="form_atualizar_fornecedor.php?for_codigo=<?php echo $dados['for_codigo']; ?>">
-                          <i class="bx bx-edit-alt me-2"></i> Editar</a
-                          >
-                        <a class="dropdown-item" href="delete_fornecedor.php?for_codigo=<?php echo $dados['for_codigo']; ?>" onclick="excluir_registro(event)">
-                    <i class="bx bx-trash me-2"></i> Apagar</a    
-                    >
-         </div>
-        </div>
+                          <a type="button" class="btn btn-secondary"  href="delete_fornecedor.php?for_codigo=<?php echo $dados['for_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg></a>
        </td>
      </tr>
     </div>

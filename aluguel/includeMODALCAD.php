@@ -1,5 +1,18 @@
 
+<?PHP
 
+require_once('../conexao/banco.php');
+
+$sql = "select * from tb_produto";
+$sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
+
+$sql2 = "select * from tb_vendedor";
+$sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
+
+$sql3 = "select * from tb_cliente";
+$sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
+
+?>
 
 <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
  
@@ -15,17 +28,15 @@
       <div class="modal-body">
     <form method="POST" id="exampleModal3" action="cadastrar_aluguel.php" enctype="multipart/form-data">
         <div class="row">
-                        <div class="mb-3 col-md-6">
-                        <label for="txt_nome" class="form-label">Nome:</label>
-                        <input
-                              class="form-control"
-                              type="text"
-                              id="txt_nome"
-                              name="txt_nome"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite no campo nome:" 
-                              
-                            />
+        <div class="mb-3 col-md-6">
+                            <label for="txt_nome" class="form-label">Nome:</label>
+                            <select id="txt_nome" name="txt_nome" class="select2 form-select" style="background-color: whitesmoke" >
+                            <option value="Selecione...">Selecione...</option>
+                            <?php while ($dados = mysqli_fetch_array($sql3)) { ?>
+                           <option value="<?php echo $dados['cli_nome']; ?>"> <?php echo utf8_encode($dados['cli_nome']) ; ?> </option>
+                          <?php } ?>
+                          </select>
+                          
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="txt_telefone" class="form-label">Telefone:</label>
@@ -150,28 +161,6 @@
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="txt_evento" class="form-label">Evento:</label>
-                            <input
-                              class="form-control"
-                              type="date"
-                              id="txt_evento"
-                              name="txt_evento"
-                              placeholder="Selecione o campo Data Evento:"
-                              style="background-color: whitesmoke"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_data_compra" class="form-label">Data/Compra:</label>
-                            <input
-                              class="form-control"
-                              type="date"
-                              id="txt_data_compra"
-                              name="txt_data_compra"
-                              placeholder="Selecione o campo Data Compra:"
-                              style="background-color: whitesmoke"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
                             <label for="txt_data_compra" class="form-label">Data/Final:</label>
                             <input
                               class="form-control"
@@ -184,16 +173,14 @@
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_codigo_produto" class="form-label">Código/Produto:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_codigo_produto"
-                              name="txt_codigo_produto"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite no campo código do produto:" 
-                              
-                            />
+                            <select id="txt_codigo_produto" name="txt_codigo_produto" class="select2 form-select" style="background-color: whitesmoke">
+                            <option value="Selecione...">Selecione...</option>
+                            <?php while ($dados = mysqli_fetch_array($sql)) { ?>
+                           <option valeu="<?php echo $dados['pro_codigo']; ?>"> <?php echo utf8_encode($dados['pro_codigo']) ; ?> </option>
+                           <?php } ?>
+                          </select>
                           </div>
+
 
                           <div class="mb-3 col-md-6">
                             <label for="txt_descricao" class="form-label">Descrição:</label>
@@ -361,15 +348,12 @@
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_vendedor" class="form-label">Vendedor:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_vendedor"
-                              name="txt_vendedor"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite no campo vendedor:" 
-                              
-                            />
+                            <select id="txt_vendedor" name="txt_vendedor" class="select2 form-select" style="background-color: whitesmoke">
+                            <option value="Selecione...">Selecione...</option>
+                            <?php while ($dados = mysqli_fetch_array($sql2)) { ?>
+                              <option valeu="<?php echo $dados['ven_nome']; ?>"> <?php echo utf8_encode($dados['ven_nome']) ; ?> </option>
+                            <?php } ?>
+                          </select>
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="txt_observacao" class="form-label">Observação:</label>

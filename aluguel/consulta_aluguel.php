@@ -308,8 +308,6 @@ color: black;
                               <th>Estado:  </th>
                               <th>Complemento: </th>
                               <th>Data/Inicial: </th>
-                              <th>Evento: </th>
-                              <th>Data/Compra: </th>
                               <th>Data/Final: </th>
                               <th>Código/Produto: </th>
                               <th>Descrição: </th>
@@ -344,8 +342,6 @@ color: black;
                             <td> <?php echo $dados['alu_estado']; ?> </td>
                             <td> <?php echo $dados['alu_complemento']; ?> </td> 
                             <td> <?php echo $dados['alu_data_inicial']; ?> </td>
-                            <td> <?php echo $dados['alu_evento']; ?> </td> 
-                            <td> <?php echo $dados['alu_data_compra']; ?> </td>
                             <td> <?php echo $dados['alu_data_final']; ?> </td>
                             <td> <?php echo $dados['pro_codigo']; ?> </td>
                             <td> <?php echo $dados['alu_descricao']; ?> </td>
@@ -452,7 +448,52 @@ color: black;
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
- 
+  <script type="text/javascript">
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever')
+  var recipientnome = button.data('whatevernome')
+  var recipienttelefone = button.data('whatevertelefone')
+  var recipientcpf = button.data('whatevercpf')
+  var recipientrua = button.data('whateverrua')
+  var recipientnumero = button.data('whatevernumero')
+  var recipientbairro = button.data('whateverbairro')
+  var recipientcidade = button.data('whatevercidade')
+  var recipientestado = button.data('whateverestado')
+  var recipientcomplemento = button.data('whatevercomplemento')
+  var recipientdatainicial = button.data('whateverdatainicial')
+  var recipientevento = button.data('whateverevento')
+  var recipientdatacompra = button.data('whateverdatacompra')
+  var recipientdatafinal = button.data('whateverdatafinal')
+  var recipientcodigoproduto = button.data('whatevercodigoproduto')
+  var recipientdescricao = button.data('whateverdescricao')
+  var recipientproduto = button.data('whateverproduto')
+  var recipientcor = button.data('whatevercor')
+  var recipienttipo = button.data('whatevertipo')
+  var recipienttamanho = button.data('whatevertamanho')
+  var recipientqtde = button.data('whateverqtde')
+  var recipientvalor = button.data('whatevervalor')
+  var recipientvalorsinal = button.data('whatevervalorsinal')
+  var recipientrestapagar = button.data('whateverrestapagar')
+  var recipientpagototal = button.data('whateverpagototal')
+  var recipienttipopagamento = button.data('whatevertipopagamento')
+  var recipientvendedor = button.data('whatevervendedor')
+  var recipienttobservacao = button.data('whateverobservacao')
+  var recipientstatus = button.data('whateverstatus')// Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Editar de ' + recipientnome)  
+  modal.find('#recipient-codigo').val(recipient)
+  modal.find('#recipient-nome').val(recipientnome)
+  modal.find('#recipient-produto-codigo').val(recipientprodutocodigo)
+  modal.find('#recipient-produto').val(recipientproduto)
+  modal.find('#recipient-qtde').val(recipientqtde)
+  modal.find('#recipient-resta-pagar').val(recipientrestapagar)
+  modal.find('#recipient-pago-total').val(recipientpagototal)
+  modal.find('#recipient-tipo-pagamento').val(recipienttipopagamento)
+})
+</script>
 
 <script>
 
