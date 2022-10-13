@@ -58,8 +58,8 @@
                             <input class="form-control" type="text" onblur="checkCPF(this.value)" data-mask="000.000.000-00" name="txt_cnpj" id="txt_cnpj" style="background-color: whitesmoke" placeholder="Digite o campo CPF:"/>
                           </div>
                           <div id="form-pessoa-juridica-cnpj"class="mb-3 col-md-6" style="display: none;">
-                            <label for="txt_cnpj_cpf" class="form-label">CNPJ:</label>
-                            <input class="form-control" type="text" onblur="checkCnpj(this.value)" data-mask="00.000.000/0000-00" name="txt_cnpj_cpf" id="txt_cnpj_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CNPJ:"/>
+                            <label for="txt_cnpj" class="form-label">CNPJ:</label>
+                            <input class="form-control" type="text" onblur="checkCnpj(this.value)" data-mask="00.000.000/0000-00" name="txt_cnpj" id="txt_cnpj" style="background-color: whitesmoke" placeholder="Digite o campo CNPJ:"/>
                           </div>
                           <div id="form-pessoa-juridica-razao"class="mb-3 col-md-6" style="display: none;">
                             <label for="razao" class="form-label">Razão:</label>

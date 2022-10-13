@@ -3,7 +3,7 @@ require_once('../conexao/banco.php');
 
 $codigo = $_REQUEST['txt_codigo'];
 $pessoa = $_REQUEST['txt_pessoa'];
-$cnpj_cpf = $_REQUEST['txt_cnpj'];
+$cnpj = $_REQUEST['txt_cnpj'];
 $razao = $_REQUEST['txt_razao'];
 $fantasia = $_REQUEST['txt_fantasia'];
 $endereco = $_REQUEST['txt_endereco'];
