@@ -79,9 +79,9 @@
       
       <div class="authentication-wrapper authentication-basic container-p-y">
         
-        <div class="text-center">
+       
       
-              <h4>Bem Vindo !</h4>
+             
         
         
      
@@ -95,6 +95,9 @@
               <!-- /Logo -->
 
               <form id="index.php" class="mb-3" action="validacao.php" method="POST">
+              <div class="text-left">
+              <h4>ACESSO:</h4>
+              <br>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                   <label for="login" class="form-label">Login:</label>
