@@ -198,13 +198,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
           <li class="nav-item">
             <a class="nav-link" href="consulta_venda.php">Consulta:</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Filtrar</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Nome</a></li>
-              
-            </ul>
-          </li>
         </ul>
       
       </div>

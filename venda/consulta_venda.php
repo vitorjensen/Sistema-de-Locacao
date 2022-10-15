@@ -186,13 +186,6 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
           <li class="nav-item">
             <a class="nav-link" href="form_venda.php">Nova Venda:</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Filtrar</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Nome</a></li>
-              
-            </ul>
-          </li>
         </ul>
         <div class="box-search"  style="position: relative; right: 10px;">
           <input class="form-control" type="search" placeholder="Pesquisar:" aria-label="Search">

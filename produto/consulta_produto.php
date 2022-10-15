@@ -342,11 +342,11 @@ color: black;
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           <li class="nav-item">
-          <button type="button" class="btn btn-danger">Consulta</button>
+          <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="form_produto.php">Novo Produto:</a>
-          </li>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal5" style="margin: 3px;">Novo</button>
+      </li>
           <li class="nav-item dropdown">
             <a></a>
             <ul class="dropdown-menu">
@@ -386,6 +386,7 @@ color: black;
                       <th> <strong> Status:</strong></th>
                       <th> <strong> Tipo:</strong></th>
                       <th> <strong> Data/Cadastro:</strong></th>
+                      <th> <strong> Disponível: </strong></th>
                             </tr>
                             </thead>
 
@@ -393,21 +394,22 @@ color: black;
                       
                       <tbody class="table-border-bottom-0"> 
                       <tr>
-                      <td> <?php echo $dados['pro_codigo']; ?> </td> 
+                      <td> <?php echo utf8_encode($dados['pro_codigo']); ?> </td> 
                       <td> <img src="<?php echo $dados['pro_foto']; ?> "target="_blank" style="width: 60px; height: 60px;" <?php echo $dados['pro_foto']; ?>>  </td>
-                      <td> <?php echo $dados['for_fantasia']; ?> </td>
-                      <td> <?php echo $dados['pro_descricao']; ?> </td>
-                      <td> <?php echo $dados['pro_descricao_add']; ?> </td>
+                      <td> <?php echo utf8_encode( $dados['for_fantasia']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_descricao']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_descricao_add']); ?> </td>
                       <td> <?php echo "R$" . number_format($dados['pro_custo'], 2, "," , "."); ?> </td> 
                       <td> <?php echo "%" . $dados['pro_indice']; ?> </td> 
                       <td> <?php echo "R$" . number_format($dados['pro_valor'], 2, "," , "."); ?> </td>
-                      <td> <?php echo $dados['pro_tamanho']; ?> </td>
-                      <td> <?php echo $dados['pro_aluguel']; ?> </td> 
-                      <td> <?php echo $dados['pro_qtde']; ?> </td> 
-                      <td> <?php echo $dados['pro_cor']; ?> </td>
-                      <td> <?php echo $dados['pro_status']; ?> </td>
-                      <td> <?php echo $dados['pro_tipo']; ?> </td>
-                      <td> <?php echo $dados['pro_data_cadastro']; ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_tamanho']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_aluguel']); ?> </td> 
+                      <td> <?php echo utf8_encode($dados['pro_qtde']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_cor']); ?> </td>
+                      <td> <?php echo utf8_encode ($dados['pro_status']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_tipo']); ?> </td>
+                      <td> <?php echo utf8_encode($dados['pro_data_cadastro']); ?> </td>
+                      <td style="color: red;"> <?php echo $dados['pro_qtde']; ?></td> 
                       <td>
                                </div>
                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" 
@@ -433,73 +435,9 @@ color: black;
                           </div>
                         </div>
                       <?php } ?>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" action="testePDF.php" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Venda:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <hr>
-      <div class="modal-body">
-        <form>
-  <div class="row">
-                       
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_codigo" class="form-label">Código:</label>
-                            <input class="form-control" type="text" name="txt_codigo"  id="recipient-codigo"/>
-                          </div>
-                          
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_nome" class="form-label">Nome:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-nome"
-                              name="txt_nome"
-                            />
-                          </div>
-
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_produto_codigo" class="form-label">#/Produto:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-produto-codigo"
-                              name="txt_produto_codigo"
-                             
-                            />
-                          </div>
-  
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_produto" class="form-label">Produto:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id=""
-                              name="txt_produto"
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_qtde" class="form-label">Qtde:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-qtde"
-                              name="txt_qtde"
-                             
-                            />
-                          </div>
-
-                      </form>
-                       <hr>
-                      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Alterar</button>
-      </div>
-                    </div>
+                      </tbody>
+                  </table>
+                      <?php include("includeMODALCAD.php"); ?>
                     <!-- /Account -->
                   </div>
                   </div>
