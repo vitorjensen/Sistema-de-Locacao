@@ -187,8 +187,12 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
               <div class="row">
                 <div class="col-md-12">
                   
-                  <div class="card">
+        
                     <!-- Notifications -->
+                    <div class="card">
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModalfornecedor" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+  </div>
+  <br>
                     <div class="card">
     <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
     <div class="container-fluid">
@@ -202,9 +206,6 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
           <li class="nav-item">
           <button type="button" class="btn btn-danger"style="margin: 3px;">Consulta</button>
           </li>
-          <li class="nav-item">
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalfornecedor" style="margin: 3px;">Novo</button>
-      </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
   <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>

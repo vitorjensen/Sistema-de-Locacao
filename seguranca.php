@@ -18,7 +18,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 $total = mysqli_num_rows($sql);
 
 if ($total == 0) {
-	header("Location: ../acesso_negado.php");
+	header("Location: acesso_negado.php");
 } 
 
 ?>

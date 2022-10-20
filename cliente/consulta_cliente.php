@@ -183,8 +183,12 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
               <div class="row">
                 <div class="col-md-12">
                   
-                  <div class="card">
+               
                     <!-- Notifications -->
+                    <div class="card">
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal5" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+  </div>
+                    <br>
                     <div class="card">
     <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
     <div class="container-fluid">
@@ -236,16 +240,16 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
                             <tbody class="table-border-bottom-0"> 
                               <tr>
-                            <td> <?php echo $dados['cli_codigo']; ?> </td> 
-                            <td> <?php echo $dados['cli_nome']; ?> </td> 
-                            <td> <?php echo $dados['cli_telefone']; ?> </td>
-                            <td> <?php echo $dados['cli_cpf']; ?> </td>
-                            <td> <?php echo $dados['cli_rua']; ?> </td> 
-                            <td> <?php echo $dados['cli_numero']; ?> </td> 
-                            <td> <?php echo $dados['cli_bairro']; ?> </td>
-                            <td> <?php echo $dados['cli_cidade']; ?> </td>
-                            <td> <?php echo $dados['cli_estado']; ?> </td> 
-                            <td> <?php echo $dados['cli_complemento']; ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_codigo']); ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_nome']); ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_telefone']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['cli_cpf']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['cli_rua']); ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_numero']); ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_bairro']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['cli_cidade']); ?> </td>
+                            <td> <?php echo utf8_encode($dados['cli_estado']); ?> </td> 
+                            <td> <?php echo utf8_encode($dados['cli_complemento']); ?> </td> 
 
                             
                           <td>

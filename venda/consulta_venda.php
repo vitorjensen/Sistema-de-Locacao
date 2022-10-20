@@ -134,7 +134,7 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                <span class="text-muted fw-light">Compra/</span> Consulta
+                <span class="text-muted fw-light">Venda/</span> Consulta
                   
                 </div>
               </div>
@@ -168,8 +168,12 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
               <div class="row">
                 <div class="col-md-12">
                   
-                  <div class="card">
+                
                     <!-- Notifications -->
+                    <div class="card">
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal3" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+  </div>
+  <br>
                     <div class="card">
     <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
     <div class="container-fluid">
