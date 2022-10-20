@@ -13,7 +13,25 @@ $sql3 = "select * from tb_cliente";
 $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
 
 ?>
-
+<script language="JavaScript">
+	
+  function mascara(t, mask){
+ 
+  var i = t.value.length;
+  var saida = mask.substring(1,0);
+  var texto = mask.substring(i)
+  
+   if (texto.substring(0,1) != saida){
+       t.value += texto.substring(0,1);
+   }
+ 
+  }
+ 
+  function foco() {
+   document.frm_fornecedor.txt_nome.focus()
+ }
+ 
+ </script>
 <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
  
   <div class="modal-dialog modal-xl" role="document">

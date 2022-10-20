@@ -173,8 +173,12 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
               <div class="row">
                 <div class="col-md-12">
                  
-                  <div class="card">
+               
                     <!-- Notifications -->
+                    <div class="card">
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal2" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+  </div>
+  <br>
                     <div class="card">
     <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
     <div class="container-fluid">
@@ -189,9 +193,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
           <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
           </li>
          
-          <li class="nav-item">
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal2" style="margin: 3px;">Novo</button>
-      </li>
+        
        
         </form>
       

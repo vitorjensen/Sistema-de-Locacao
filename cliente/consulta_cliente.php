@@ -186,7 +186,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                
                     <!-- Notifications -->
                     <div class="card">
-                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal5" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal6" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
   </div>
                     <br>
                     <div class="card">
@@ -202,9 +202,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
           <li class="nav-item">
           <button type="button" class="btn btn-danger">Consulta</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="form_cliente.php">Novo Cliente:</a>
-          </li>
+        
 
         </ul>
         <div class="box-search"  style="position: relative; right: 10px;">
@@ -274,7 +272,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 </tbody>
 </table>
 
-   
+<?php include("includeMODALCAD.php"); ?>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -295,6 +293,9 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     <script>
 
