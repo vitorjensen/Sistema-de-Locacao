@@ -310,84 +310,23 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
       </div>
       <hr>
       <div class="modal-body">
-        <form>
-  <div class="row">
-                       
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_codigo" class="form-label">Código:</label>
-                            <input class="form-control" type="text" name="txt_codigo"  id="recipient-codigo"/>
-                          </div>
-                          
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_nome" class="form-label">Nome:</label>
-                            <input class="form-control" type="text" name="txt_codigo"  id="recipient-nome"/>
-                          </div>
+                        <table class="table"><tbody><tr data-dt-row="99" data-dt-column="2">
+                          <td>id:</td> 
+                          <td>100</td>
+                        </tr>
+                        <tr data-dt-row="99" data-dt-column="3">
+                          <td>Name:</td> 
+                          <td>
+                            <div class="d-flex justify-content-start align-items-center">
+                              <div class="avatar-wrapper">
+                                <div class="avatar me-2">
+                                  <span class="avatar-initial rounded-circle bg-label-info">GG</span>
+                                </div>
+                              </div>
+                              <div class="d-flex flex-column"><span class="emp_name text-truncate">Glyn Giacoppo</span>
+                              <small class="emp_post text-truncate text-muted">Software Test Engineer</small>
+                            </div></div></td></tr><tr data-dt-row="99" data-dt-column="4"><td>Email:</td> <td>ggiacoppo2r@apache.org</td></tr><tr data-dt-row="99" data-dt-column="5"><td>Date:</td> <td>04/15/2021</td></tr><tr data-dt-row="99" data-dt-column="6"><td>Salary:</td> <td>$24973.48</td></tr><tr data-dt-row="99" data-dt-column="7"><td>Status:</td> <td><span class="badge rounded-pill  bg-label-success">Professional</span></td></tr><tr data-dt-row="99" data-dt-column="8"><td>Actions:</td> <td><div class="d-inline-block"><a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></a><ul class="dropdown-menu dropdown-menu-end"><li><a href="javascript:;" class="dropdown-item">Details</a></li><li><a href="javascript:;" class="dropdown-item">Archive</a></li><div class="dropdown-divider"></div><li><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></li></ul></div><a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="bx bxs-edit"></i></a></td></tr></tbody></table></div></div></div>
 
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_produto_codigo" class="form-label">#/Produto:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-produto-codigo"
-                              name="txt_produto_codigo"
-                             
-                            />
-                          </div>
-  
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_produto" class="form-label">Produto:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-produto"
-                              name="txt_produto"
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_qtde" class="form-label">Qtde:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-qtde"
-                              name="txt_qtde"
-                             
-                            />
-                          </div>
-  
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_resta_pagar" class="form-label">Resta Pagar:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-resta-pagar"
-                              name="txt_resta_pagar"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_pago_total" class="form-label">Pago Total:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-pago-total"
-                              name="txt_pago_total"
-                             
-                            />
-                          </div>
-  
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_tipo_pagamento" class="form-label">Tipo Pagamento:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="recipient-tipo-pagamento"
-                              name="txt_tipo_pagamento"
-                            />
-                          </div>
-
-        </form>
-      </div>
-      </div>
       <hr>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

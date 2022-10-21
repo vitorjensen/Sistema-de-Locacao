@@ -13,6 +13,7 @@ $sql3 = "select * from tb_cliente";
 $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
 
 ?>
+<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
 <script language="JavaScript">
 	
   function mascara(t, mask){
@@ -51,122 +52,11 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                             <select id="txt_nome" name="txt_nome" class="select2 form-select" style="background-color: whitesmoke" >
                             <option value="Selecione...">Selecione...</option>
                             <?php while ($dados = mysqli_fetch_array($sql3)) { ?>
-                           <option value="<?php echo $dados['cli_nome']; ?>"> <?php echo utf8_encode($dados['cli_nome']) ; ?> </option>
+                           <option value="<?php echo $dados['cli_codigo']; ?>"> <?php echo utf8_encode($dados['cli_nome']) ; ?> </option>
                           <?php } ?>
                           </select>
                           
                         </div>
-                        <div class="mb-3 col-md-6">
-                            <label for="txt_telefone" class="form-label">Telefone:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_telefone"
-                              name="txt_telefone"
-                              onkeypress="mascara(this, '## #####-####')"
-                              maxlength="13"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Telefone:" 
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_cpf" class="form-label">CPF:</label>
-                            <input class="form-control" type="text" name="txt_cpf" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_rua" class="form-label">Rua:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_rua"
-                              name="txt_rua"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Rua:" 
-                              
-                            />
-                          </div>
-
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_numero" class="form-label">Número:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_numero"
-                              name="txt_numero"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite no campo Número:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_bairro" class="form-label">Bairro:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_bairro"
-                              name="txt_bairro"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Bairro:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_cidade" class="form-label">Cidade:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_cidade"
-                              name="txt_cidade"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Cidade:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_estado" class="form-label">Estado:</label>
-                            <select id="txt_estado" name="txt_estado" class="select2 form-select" style="background-color: whitesmoke" >
-                            <option value=""></option>
-                            <option value="AC">AC</option>
-                            <option value="AL">AL</option>
-                            <option value="AP">AP</option>
-                            <option value="AM">AM</option>
-                            <option value="BA">BA</option>
-                            <option value="CE">CE</option>
-                            <option value="ES">ES</option>
-                            <option value="GO">GO</option>
-                            <option value="MA">MA</option>
-                            <option value="MT">MT</option>
-                            <option value="MS">MS</option>
-                            <option value="MG">MG</option>
-                            <option value="PA">PA</option>
-                            <option value="PB">PB</option>
-                            <option value="PR">PR</option>
-                            <option value="PE">PE</option>
-                            <option value="PI">PI</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RN">RN</option>
-                            <option value="RS">RS</option>
-                            <option value="RO">RO</option>
-                            <option value="RR">RR</option>
-                            <option value="SC">SC</option>
-                            <option value="SP">SP</option>
-                            <option value="SE">SE</option>
-                            <option value="TO">TO</option>
-                            <option value="DF">DF</option>
-                          </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_complemento" class="form-label">Complemento:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_complemento"
-                              name="txt_complemento"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Complemento:" 
-                              
-                            />
-                          </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_data_inicial" class="form-label">Data/inicial:</label>
                             <input
@@ -191,110 +81,32 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_codigo_produto" class="form-label">Código/Produto:</label>
-                            <select id="txt_codigo_produto" name="txt_codigo_produto" class="select2 form-select" style="background-color: whitesmoke">
+                            <select id="txt_codigo_produto" name="txt_codigo_produto" class="select2 form-select" style="background-color: whitesmoke" onchange="PreencherValor(this)">
                             <option value="Selecione...">Selecione...</option>
                             <?php while ($dados = mysqli_fetch_array($sql)) { ?>
-                           <option valeu="<?php echo $dados['pro_codigo']; ?>"> <?php echo utf8_encode($dados['pro_codigo']) ; ?> </option>
+                           <option value="<?php echo $dados['pro_codigo']; ?>"> <?php echo utf8_encode($dados['pro_codigo'].' - '.$dados['pro_descricao']) ; ?> </option>
                            <?php } ?>
                           </select>
                           </div>
+                          <? require("consulta_valor_prod.php") ?>
+                          <script>
+                            function PreencherValor(input){
+                              console.log(input.value);
+                              var codigo = input.value;
+                            
+                              $.ajax({
+                                'url':'consulta_valor_prod.php?codigo='+codigo,
+                                'type':'GET',
+                                'dataType': 'jsonp',
+                                'success':function(response){
+                                    console.log('o valor é '+response);
+                                }
+                              });
+                              
+                              
+                            }
 
-
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_descricao" class="form-label">Descrição:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_descricao"
-                              name="txt_descricao"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Descrição:"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_produto" class="form-label">Produto:</label>
-                            <select id="txt_produto" name="txt_produto" class="select2 form-select" style="background-color: whitesmoke">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="Vestido">Vestido</option>
-                            <option value="Estóla">Estóla</option>
-                            <option value="Pashmina">Pashmina</option>
-                            <option value="Brinco">Brinco</option>
-                            <option value="Clutch">Clutch</option>
-                            <option value="Colar">Colar</option>
-                            <option value="Anel">Anel</option>
-                          </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_cor" class="form-label">Cor:</label>
-                            <select id="txt_cor" name="txt_cor" class="select2 form-select" style="background-color: whitesmoke">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="VERMELHO">VERMELHO</option>
-                            <option value="AZUL">AZUL</option>
-                            <option value="AMARELO">AMARELO</option>
-                            <option value="VERDE">VERDE</option>
-                            <option value="DOURADO">DOURADO</option>
-                            <option value="PRATA">PRATA</option>
-                            <option value="SERENITY">SERENITY</option>
-                            <option value="TIFANY">TIFANY</option>
-                            <option value="TERRACOTA">TERRACOTA</option>
-                            <option value="MARSALA">MARSALA</option>
-                            <option value="BRANCO">BRANCO</option>
-                            <option value="ROSE">ROSE</option>
-                            <option value="MARINHO">MARINHO</option>
-                            <option value="FIGO">FIGO</option>
-                            <option value="LILAS">LILAS</option>
-                            <option value="ROXO">ROXO</option>
-                            <option value="SALMÃO">SALMÃO</option>
-                            <option value="PRETO">PRETO</option>
-                            <option value="PETROLEO">PETROLEO</option>
-                            <option value="GELO">GELO</option>
-                            <option value="PINK">PINK</option>
-                            <option value="CINZA">CINZA</option>
-                            <option value="NUDE/AZUL">NUDE/AZUL</option>
-                            <option value="HOLOGRAFICO">HOLOGRAFICO</option>
-                            <option value="LARANJA">LARANJA</option>
-                            <option value="ROYAL">ROYAL</option>
-                            <option value="FUCHSIA">FUCHSIA</option>
-                            <option value="ROSA">ROSA</option>
-                            <option value="VERDE">VERDE</option>
-                            <option value="MENTA">MENTA</option>
-                            <option value="PESSEGO">PESSEGO</option>
-                            <option value="CHUMBO">CHUMBO</option>
-                            <option value="MNUDE/VERDE">NUDE/VERDE</option>
-                            <option value="MARROM">MARROM</option>
-                            <option value="NUDE">NUDE</option>
-                            <option value="CORAL">CORAL</option>
-                            <option value="ESMERALDA">ESMERALDA</option>
-                          </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_tipo" class="form-label">Tipo:</label>
-                            <select id="txt_tipo" name="txt_tipo" class="select2 form-select" style="background-color: whitesmoke">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="Longo">Longo</option>
-                            <option value="Curto">Curto</option>
-                            <option value="Midi">Midi</option>
-                          </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_tamanho" class="form-label">Tamanho:</label>
-                            <select id="txt_tamanho" name="txt_tamanho" class="select2 form-select" style="background-color: whitesmoke">
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="38">38</option>
-                            <option value="40">40</option>
-                            <option value="42">42</option>
-                            <option value="46">46</option>
-                            <option value="48">48</option>
-                            <option value="50">50</option>
-                            <option value="52">52</option>
-                            <option value="PP">PP</option>
-                            <option value="P">P</option>
-                            <option value="M">M</option>
-                            <option value="G">G</option>
-                            <option value="GG">GG</option>
-                            <option value="UN">UN</option> 
-                          </select>
-                          </div>
+                          </script>
                           <div class="mb-3 col-md-6">
                             <label for="txt_qtde" class="form-label">QTDE:</label>
                             <input
@@ -302,9 +114,8 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                               type="text"
                               id="txt_qtde"
                               name="txt_qtde"
-                              maxlength="12"
                               style="background-color: whitesmoke"
-                              placeholder="Digite o campo Quantidade:"
+                              placeholder="Digite o campo QTDE:"
                             />
                           </div>
                           <div class="mb-3 col-md-6">

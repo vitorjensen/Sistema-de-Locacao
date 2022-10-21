@@ -301,21 +301,11 @@ color: black;
                               <th>#:</th>
                               <th>Nome: </th>
                               <th>Telefone: </th>
-                              <th>CPF:  </th>
-                              <th>Rua: </th>
-                              <th>Número: </th>
-                              <th>Bairro: </th>
-                              <th>Cidade: </th>
-                              <th>Estado:  </th>
-                              <th>Complemento: </th>
+                              <th>CPF: </th>
                               <th>Data/Inicial: </th>
                               <th>Data/Final: </th>
                               <th>Código/Produto: </th>
                               <th>Descrição: </th>
-                              <th>Produto: </th>
-                              <th>Cor: </th>
-                              <th>Tipo: </th>
-                              <th>Tamanho: </th>
                               <th>QTDE: </th>
                               <th>Valor: </th>
                               <th>Valor Sinal: </th>
@@ -334,22 +324,12 @@ color: black;
                               <tr>
                             <td> <?php echo $dados['alu_codigo']; ?> </td> 
                             <td> <?php echo $dados['cli_nome']; ?> </td> 
-                            <td> <?php echo $dados['alu_telefone']; ?> </td>
-                            <td> <?php echo $dados['alu_cpf']; ?> </td>
-                            <td> <?php echo $dados['alu_rua']; ?> </td> 
-                            <td> <?php echo $dados['alu_numero']; ?> </td>
-                            <td> <?php echo $dados['alu_bairro']; ?> </td>  
-                            <td> <?php echo $dados['alu_cidade']; ?> </td>
-                            <td> <?php echo $dados['alu_estado']; ?> </td>
-                            <td> <?php echo $dados['alu_complemento']; ?> </td> 
+                            <td> <?php echo $dados['cli_telefone']; ?> </td>
+                            <td> <?php echo $dados['cli_cpf']; ?> </td>
                             <td> <?php echo $dados['alu_data_inicial']; ?> </td>
                             <td> <?php echo $dados['alu_data_final']; ?> </td>
                             <td> <?php echo $dados['pro_codigo']; ?> </td>
-                            <td> <?php echo $dados['alu_descricao']; ?> </td>
-                            <td> <?php echo $dados['alu_produto']; ?> </td>
-                            <td> <?php echo $dados['alu_cor']; ?> </td> 
-                            <td> <?php echo $dados['alu_tipo']; ?> </td> 
-                            <td> <?php echo $dados['alu_tamanho']; ?> </td>
+                            <td> <?php echo $dados['pro_descricao']; ?> </td>
                             <td> <?php echo $dados['alu_qtde']; ?> </td>
                             <td> <?php echo "R$" . number_format($dados['alu_valor'], 2, "," , "."); ?> </td> 
                             <td> <?php echo "R$" . number_format($dados['alu_valor_sinal'], 2, "," , "."); ?> </td> 
@@ -445,7 +425,10 @@ color: black;
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
