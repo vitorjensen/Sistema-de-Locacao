@@ -47,11 +47,6 @@
                 <div data-i18n="Account Settings text-white">Cliente:</div>
               </a>
               <ul class="menu-sub text-white">
-                <li class="menu-item text-white">
-                  <a href="../cliente/form_cliente.php" class="menu-link text-white">
-                    <div data-i18n="Account text-white">Novo Cliente:</div>
-                  </a>
-                </li>
                 <li class="menu-item  text-white">
                   <a href="../cliente/consulta_cliente.php" class="menu-link  text-white">
                     <div data-i18n="Notifications  text-white">Consulta:</div>
