@@ -281,10 +281,12 @@ include_once "../conexao_movimentacao/banco.php";
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                             </div>
                             </div>
+                            
                             
  
 

@@ -176,18 +176,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                             <option value="ESMERALDA">ESMERALDA</option>
                           </select>
                           </div>
-                          
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_status" class="form-label">Status:</label>
-                            <select id="txt_status" name="txt_status" class="select2 form-select" style="background-color: whitesmoke" >
-                            <option value="Selecione...">Selecione...</option>
-                            <option value="Ativo">Ativo</option>
-                            <option value="Inativo">Inativo</option>
-                          </select>
-                          </div>
-                          
-                          
-                          
+
                           <div class="mb-3 col-md-6">
                             <label for="txt_tipo" class="form-label">Tipo:</label>
                             <select id="txt_tipo" name="txt_tipo" class="select2 form-select" style="background-color: whitesmoke" >

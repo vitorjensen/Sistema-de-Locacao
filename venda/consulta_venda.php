@@ -168,7 +168,7 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
               <div class="row">
                 <div class="col-md-12">
                   
-                
+                <h5 class="text-center">Tela em andamento...</h5>
                     <!-- Notifications -->
                     <div class="card">
                     <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal3" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>

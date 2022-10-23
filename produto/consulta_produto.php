@@ -390,7 +390,6 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <th> <strong> Status:</strong></th>
                       <th> <strong> Tipo:</strong></th>
                       <th> <strong> Data/Cadastro:</strong></th>
-                      <th> <strong> Disponível: </strong></th>
                             </tr>
                             </thead>
 
@@ -407,13 +406,18 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <td> <?php echo "%" . $dados['pro_indice']; ?> </td> 
                       <td> <?php echo "R$" . number_format($dados['pro_valor'], 2, "," , "."); ?> </td>
                       <td> <?php echo utf8_encode($dados['pro_tamanho']); ?> </td>
-                      <td> <?php echo utf8_encode($dados['pro_aluguel']); ?> </td> 
+                      <td> <?php echo ($dados['pro_aluguel']); ?> </td> 
                       <td> <?php echo utf8_encode($dados['pro_qtde']); ?> </td>
                       <td> <?php echo utf8_encode($dados['pro_cor']); ?> </td>
-                      <td> <?php echo utf8_encode ($dados['pro_status']); ?> </td>
+                      <td> <?php  echo utf8_encode ($dados['pro_status']); 
+                      if($dados['pro_qtde'] <> '0' ){
+                        echo  '<span class="badge rounded-pill  bg-label-success"><strong>ATIVO</strong></span>';
+                      }if($dados['pro_qtde'] == '0')
+                      echo  '<span class="badge rounded-pill  bg-label-danger"><strong>INATIVO</strong></span>';
+                      ?> </td>
                       <td> <?php echo utf8_encode($dados['pro_tipo']); ?> </td>
                       <td> <?php echo utf8_encode($dados['pro_data_cadastro']); ?> </td>
-                      <td style="color: red;"> <?php echo $dados['pro_qtde']; ?></td> 
+                     
                       <td>
                                </div>
                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" 

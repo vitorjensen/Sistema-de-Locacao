@@ -244,7 +244,11 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                 
                     <!-- Notifications -->
                     <div class="card">
-                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal3" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal3" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro (<?php
+        include_once "../conexao_movimentacao/banco.php"; 
+          $query_valor = "SELECT COUNT(alu_codigo) AS valor_registro FROM tb_aluguel"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+          $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
+          ?>)</font></font></span></span></button>
   </div>
   <br>
                   
