@@ -27,6 +27,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
 
 
+
 $cons_codigo = isset($_REQUEST['txt_cons_codigo']) ? $_REQUEST['txt_cons_codigo'] : '';
 
 $sql2 = "select *, date_format(ven_data_cadastro,'%d/%m/%Y') as data
@@ -270,13 +271,9 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
 
         </ul>
         
-        <div class="box-search"  style="padding-right: 10px;">
-          <input class="form-control" type="search" id="pesquisa_status" placeholder="Pesquisar:" aria-label="Search">
-          </div>
-         
+        
           <div class="box-search"  style="padding-right: 5px;">
           <select id="pesquisa" class="select2 form-select">
-          <option value=""></option>
           <option value="DEVOLVIDO">DEVOLVIDO</option>
           <option value="RESERVADO">RESERVADO</option>
           <option value="LOCADO">LOCADO</option>
@@ -478,7 +475,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 <script>
 
 var search = document.getElementById('pesquisa');
-var searchstatus = document.getElementById('pesquisa_status');
+
 
 search.addEventListener("keydown", function(event){
   if (event.key === "Enter")
@@ -494,9 +491,6 @@ function searchData()
 
 
 </script>
-
-  
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
   </body>
 </html>

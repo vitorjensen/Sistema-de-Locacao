@@ -1,7 +1,7 @@
 
 
 
-<div class="modal fade" id="exampleModallogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+<div class="modal fade" id="exampleModal8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
  
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -13,7 +13,7 @@
       </div>
       <hr>
       <div class="modal-body">
-    <form method="POST" id="exampleModallogin" action="atualizar_vendedor.php" enctype="multipart/form-data">
+    <form method="POST" id="exampleModal8" action="atualizar_vendedor.php" enctype="multipart/form-data">
         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Nome:</label>
                           <div class="col-sm-10">
