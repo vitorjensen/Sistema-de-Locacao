@@ -251,19 +251,13 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
                             
                           <td>
-                          <div class="dropdow">
-                          <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                          </button>
-                          <div class="dropdown-menu">
-                          <a class="dropdown-item" href="form_atualizar_cliente.php?cli_codigo=<?php echo $dados['cli_codigo']; ?>">
-                          <i class="bx bx-edit-alt me-2"></i> Editar</a
-                          >
-                        <a class="dropdown-item" href="delete_cliente.php?cli_codigo=<?php echo $dados['cli_codigo']; ?>" onclick="excluir_registro(event)">
-                    <i class="bx bx-trash me-2"></i> Apagar</a    
-                    >
-         </div>
-        </div>              
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+</svg></button>
+                          <a type="button" class="btn btn-secondary"  href="delete_cliente.php?cli_codigo=<?php echo $dados['cli_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg></a> 
+                 
        </td>
      </tr>
     </div>
@@ -273,6 +267,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 </table>
 
 <?php include("includeMODALCAD.php"); ?>
+<?php include("includeMODAL.php"); ?>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -280,7 +275,6 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
     <script src="../assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
