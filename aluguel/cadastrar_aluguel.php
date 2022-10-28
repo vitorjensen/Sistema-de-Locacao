@@ -19,7 +19,7 @@ $status = $_REQUEST['txt_status'];
 			   
 
 $sql = "insert into tb_aluguel (cli_codigo, alu_data_inicial, alu_evento, alu_data_compra, alu_data_final, pro_codigo, alu_qtde, alu_valor, alu_valor_sinal, alu_resta_pagar, alu_pago_total, alu_tipo_pagamento, ven_nome, alu_observacao, alu_status) 
-								values ('$codigo', '$data_inicial', '$evento', '$data_compra', '$data_final', '$codigo_produto', '$qtde', '$valor', '$valor_sinal', '$resta_pagar', '$pago_total', '$tipo_pagamento', '$vendedor', '$observacao', '$status')";
+								values ('$codigo', '$data_inicial',  '$evento', '$data_compra', '$data_final', '$codigo_produto', '$qtde', '$valor', '$valor_sinal', '$resta_pagar', '$pago_total', '$tipo_pagamento', '$vendedor', '$observacao', '$status')";
 
 mysqli_query($con, $sql) or die ("Erro na sql!") ;
 

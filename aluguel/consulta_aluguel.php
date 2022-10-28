@@ -12,11 +12,36 @@ if(!empty($_GET['search']))
 }
 else
 {
-  $sql = "select *, date_format(alu_data_inicial,'%d/%m/%Y') as alu_data_inicial, date_format(alu_evento,'%d/%m/%Y') as alu_evento,
-  date_format(alu_data_compra,'%d/%m/%Y') as alu_data_compra, date_format(alu_data_final,'%d/%m/%Y') as alu_data_final
+  $sql = "select 
+	a.alu_codigo,
+	date_format(a.alu_data_inicial,'%d/%m/%Y') as alu_data_inicial, 
+	date_format(a.alu_evento,'%d/%m/%Y') as alu_evento,
+ 	date_format(a.alu_data_compra,'%d/%m/%Y') as alu_data_compra, 
+  	date_format(a.alu_data_final,'%d/%m/%Y') as alu_data_final,
+    c.cli_nome,
+    c.cli_telefone,
+    c.cli_cpf,
+    a.alu_data_inicial,
+    a.alu_evento,
+    a.alu_data_compra,
+    a.alu_data_final,
+    p.pro_codigo,
+    p.pro_descricao,
+    a.alu_qtde,
+    a.alu_valor,
+    a.alu_valor_sinal,
+    a.alu_resta_pagar,
+    a.alu_pago_total,
+    a.alu_tipo_pagamento,
+    v.ven_nome,
+    a.alu_observacao,
+    a.alu_status
 
-  from tb_aluguel
-        where alu_codigo like '%".$cons_codigo."%'
+  from tb_aluguel a
+  inner join tb_cliente c on (a.cli_codigo = c.cli_codigo)
+  inner join tb_produto p on (a.pro_codigo = p.pro_codigo)
+  inner join tb_vendedor v on (a.ven_codigo = v.ven_codigo)
+        where a.alu_codigo like '%".$cons_codigo."%'
        ";
        
 }
@@ -298,6 +323,8 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                               <th>Telefone: </th>
                               <th>CPF: </th>
                               <th>Data/Inicial: </th>
+                              <th>Data/Evento: </th>
+                              <th>Data/Compra: </th>
                               <th>Data/Final: </th>
                               <th>Código/Produto: </th>
                               <th>Descrição: </th>
@@ -322,6 +349,8 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                             <td> <?php echo $dados['cli_telefone']; ?> </td>
                             <td> <?php echo $dados['cli_cpf']; ?> </td>
                             <td> <?php echo $dados['alu_data_inicial']; ?> </td>
+                            <td> <?php echo $dados['alu_evento']; ?> </td>
+                            <td> <?php echo $dados['alu_data_compra']; ?> </td>
                             <td> <?php echo $dados['alu_data_final']; ?> </td>
                             <td> <?php echo $dados['pro_codigo']; ?> </td>
                             <td> <?php echo $dados['pro_descricao']; ?> </td>

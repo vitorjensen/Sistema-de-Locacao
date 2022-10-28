@@ -69,6 +69,28 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                             />
                           </div>
                           <div class="mb-3 col-md-6">
+                            <label for="txt_evento" class="form-label">Evento:</label>
+                            <input
+                              class="form-control"
+                              type="date"
+                              id="txt_evento"
+                              name="txt_evento"
+                              placeholder="Selecione o campo Evento:"
+                              style="background-color: whitesmoke"
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label for="txt_data_compra" class="form-label">Data/Compra:</label>
+                            <input
+                              class="form-control"
+                              type="date"
+                              id="txt_data_compra"
+                              name="txt_data_compra"
+                              placeholder="Selecione o campo Data de Compra:"
+                              style="background-color: whitesmoke"
+                            />
+                          </div>
+                          <div class="mb-3 col-md-6">
                             <label for="txt_data_compra" class="form-label">Data/Final:</label>
                             <input
                               class="form-control"
@@ -79,6 +101,7 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                               style="background-color: whitesmoke"
                             />
                           </div>
+                          
                           <div class="mb-3 col-md-6">
                             <label for="txt_codigo_produto" class="form-label">Código/Produto:</label>
                             <select id="txt_codigo_produto" name="txt_codigo_produto" class="select2 form-select" style="background-color: whitesmoke" onchange="PreencherValor(this)">
@@ -95,12 +118,18 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                               var codigo = input.value;
                             
                               $.ajax({
-                                'url':'consulta_valor_prod.php?codigo='+codigo,
+                                'url':'consulta_valor_prod.php?pro_codigo='+codigo,
                                 'type':'GET',
-                                'dataType': 'jsonp',
+                                'async': true,
                                 'success':function(response){
-                                    console.log('o valor é '+response);
-                                }
+                                    //console.log('o valor é '+response);
+                                    console.log(response);
+                                    document.getElementById('txt_valor').value = response
+                                },
+                                'error':function(erro){
+                                    console.log(erro);
+                                    //alert(erro);
+                                },
                               });
                               
                               
@@ -122,6 +151,7 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                             <label for="txt_valor" class="form-label">Valor:</label>
                             <input
                               class="form-control"
+                              onchange="PreencherValor()"
                               type="text"
                               id="txt_valor"
                               name="txt_valor"
