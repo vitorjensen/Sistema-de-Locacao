@@ -69,28 +69,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                             />
                           </div>
                           <div class="mb-3 col-md-6">
-                            <label for="txt_evento" class="form-label">Evento:</label>
-                            <input
-                              class="form-control"
-                              type="date"
-                              id="txt_evento"
-                              name="txt_evento"
-                              placeholder="Selecione o campo Evento:"
-                              style="background-color: whitesmoke"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_data_compra" class="form-label">Data/Compra:</label>
-                            <input
-                              class="form-control"
-                              type="date"
-                              id="txt_data_compra"
-                              name="txt_data_compra"
-                              placeholder="Selecione o campo Data de Compra:"
-                              style="background-color: whitesmoke"
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
                             <label for="txt_data_compra" class="form-label">Data/Final:</label>
                             <input
                               class="form-control"
@@ -151,7 +129,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                             <label for="txt_valor" class="form-label">Valor:</label>
                             <input
                               class="form-control"
-                              onchange="PreencherValor()"
                               type="text"
                               id="txt_valor"
                               name="txt_valor"
@@ -221,7 +198,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                           <div class="mb-3 col-md-6">
                           <label for="txt_status" class="form-label">Status:</label>
                           <select id="txt_status" name="txt_status" class="select2 form-select" style="background-color: whitesmoke">
-                            <option value="Selecione...">Selecione...</option>
                             <option value="LOCADO">LOCADO</option>
                             <option value="RESERVADO">RESERVADO</option>
                             <option value="DEVOLVIDO">DEVOLVIDO</option>
