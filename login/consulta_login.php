@@ -52,7 +52,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href=""/>
+    <link rel="icon" type="image/x-icon" href="" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -177,6 +177,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                     <!-- Notifications -->
                     <div class="card">
                     <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal2" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
+                    
   </div>
   <br>
                     <div class="card">
@@ -221,7 +222,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <td> <?php echo $dados['log_senha']; ?> </td>
 
                       <td>
-                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal8" 
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" 
                                data-whatevernome="<?php echo $dados['ven_nome']; ?>"
                                data-whateverempresa="<?php echo $dados['ven_empresa'];  ?>"
                                data-whateveremail="<?php echo $dados['ven_email']; ?>"
@@ -264,12 +265,28 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
     <!-- Page JS -->
 
     <!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-   
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
- 
+  
+  <script type="text/javascript">
+$('#exampleModalAtualizarLogin').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipientnome = button.data('whatevernome')
+  var recipientempresa = button.data('whateverempresa')
+  var recipientemail = button.data('whateveremail')
+  var recipientdatacadastro = button.data('whateverdatacadastro')
+// Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Editar de ' + recipientnome)  
+  modal.find('#recipient-nome').val(recipientnome)
+  modal.find('#recipient-empresa').val(recipientempresa)
+  modal.find('#recipient-email').val(recipientemail)
+  modal.find('#recipient-data-cadastro').val(recipientdatacadastro)
+})
+</script>
   </body>
 </html>

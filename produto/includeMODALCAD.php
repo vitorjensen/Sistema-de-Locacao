@@ -186,8 +186,7 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                             <option value="Midi">Midi</option>
                           </select>
                           </div>
-                          
-
+  
                           <div class="mb-3 col-md-6">
                             <label for="txt_data_cadastro" class="form-label">Data/Cadastro:</label>
                             <input

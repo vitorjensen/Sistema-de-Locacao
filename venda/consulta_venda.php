@@ -327,10 +327,6 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                               <small class="emp_post text-truncate text-muted">Software Test Engineer</small>
                             </div></div></td></tr><tr data-dt-row="99" data-dt-column="4"><td>Email:</td> <td>ggiacoppo2r@apache.org</td></tr><tr data-dt-row="99" data-dt-column="5"><td>Date:</td> <td>04/15/2021</td></tr><tr data-dt-row="99" data-dt-column="6"><td>Salary:</td> <td>$24973.48</td></tr><tr data-dt-row="99" data-dt-column="7"><td>Status:</td> <td><span class="badge rounded-pill  bg-label-success">Professional</span></td></tr><tr data-dt-row="99" data-dt-column="8"><td>Actions:</td> <td><div class="d-inline-block"><a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></a><ul class="dropdown-menu dropdown-menu-end"><li><a href="javascript:;" class="dropdown-item">Details</a></li><li><a href="javascript:;" class="dropdown-item">Archive</a></li><div class="dropdown-divider"></div><li><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></li></ul></div><a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="bx bxs-edit"></i></a></td></tr></tbody></table></div></div></div>
 
-      <hr>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-      </div>
     </div>
 
                     

@@ -69,16 +69,15 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
-
     <title>Consulta | Cliente</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="" />
+    <img src="../fotos/DREAM">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -238,16 +237,16 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
                             <tbody class="table-border-bottom-0"> 
                               <tr>
-                            <td> <?php echo utf8_encode($dados['cli_codigo']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['cli_nome']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['cli_telefone']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['cli_cpf']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['cli_rua']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['cli_numero']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['cli_bairro']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['cli_cidade']); ?> </td>
-                            <td> <?php echo utf8_encode($dados['cli_estado']); ?> </td> 
-                            <td> <?php echo utf8_encode($dados['cli_complemento']); ?> </td> 
+                            <td> <?php echo $dados['cli_codigo']; ?> </td> 
+                            <td> <?php echo $dados['cli_nome']; ?> </td> 
+                            <td> <?php echo $dados['cli_telefone']; ?> </td>
+                            <td> <?php echo $dados['cli_cpf']; ?> </td>
+                            <td> <?php echo $dados['cli_rua']; ?> </td> 
+                            <td> <?php echo $dados['cli_numero']; ?> </td> 
+                            <td> <?php echo $dados['cli_bairro']; ?> </td>
+                            <td> <?php echo $dados['cli_cidade']; ?> </td>
+                            <td> <?php echo $dados['cli_estado']; ?> </td> 
+                            <td> <?php echo $dados['cli_complemento']; ?> </td> 
 
                             
                           <td>

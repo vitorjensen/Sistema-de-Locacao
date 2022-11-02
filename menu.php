@@ -61,11 +61,6 @@
               </a>
               <ul class="menu-sub  text-white">
                 <li class="menu-item  text-white">
-                  <a href="../aluguel/form_aluguel.php" class="menu-link  text-white">
-                    <div data-i18n="Basic  text-white">Novo aluguel:</div>
-                  </a>
-                </li>
-                <li class="menu-item  text-white">
                   <a href="../aluguel/consulta_aluguel.php" class="menu-link  text-white">
                     <div data-i18n="Basic  text-white">Consulta:</div>
                   </a>
@@ -83,11 +78,7 @@
                 <div data-i18n="Misc  text-white">Produto:</div>
               </a>
               <ul class="menu-sub  text-white">
-                <li class="menu-item  text-white">
-                  <a href="../produto/form_produto.php" class="menu-link  text-white">
-                    <div data-i18n="Error  text-white">Novo Produto:</div>
-                  </a>
-                </li>
+              
                 <li class="menu-item  text-white">
                   <a href="../produto/consulta_produto.php" class="menu-link  text-white">
                     <div data-i18n="Under Maintenance  text-white">Consulta:</div>

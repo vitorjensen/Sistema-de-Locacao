@@ -1,39 +1,6 @@
 
-<?PHP
 
-require_once('../conexao/banco.php');
-
-$sql = "select * from tb_produto";
-$sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
-
-$sql2 = "select * from tb_vendedor";
-$sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
-
-$sql3 = "select * from tb_cliente";
-$sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
-
-?>
-<script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
-<script language="JavaScript">
-	
-  function mascara(t, mask){
- 
-  var i = t.value.length;
-  var saida = mask.substring(1,0);
-  var texto = mask.substring(i)
-  
-   if (texto.substring(0,1) != saida){
-       t.value += texto.substring(0,1);
-   }
- 
-  }
- 
-  function foco() {
-   document.frm_fornecedor.txt_nome.focus()
- }
- 
- </script>
-<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
  
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -45,7 +12,7 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
       </div>
       <hr>
       <div class="modal-body">
-    <form method="POST" id="exampleModal3" action="cadastrar_aluguel.php" enctype="multipart/form-data">
+    <form method="POST" id="exampleModal" action="" enctype="multipart/form-data">
         <div class="row">
         <div class="mb-3 col-md-6">
                             <label for="txt_nome" class="form-label">Nome:</label>
@@ -89,31 +56,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                            <?php } ?>
                           </select>
                           </div>
-                          <? require("consulta_valor_prod.php") ?>
-                          <script>
-                            function PreencherValor(input){
-                              console.log(input.value);
-                              var codigo = input.value;
-                            
-                              $.ajax({
-                                'url':'consulta_valor_prod.php?pro_codigo='+codigo,
-                                'type':'GET',
-                                'async': true,
-                                'success':function(response){
-                                    //console.log('o valor é '+response);
-                                    console.log(response);
-                                    document.getElementById('txt_valor').value = response
-                                },
-                                'error':function(erro){
-                                    console.log(erro);
-                                    //alert(erro);
-                                },
-                              });
-                              
-                              
-                            }
-
-                          </script>
                           <div class="mb-3 col-md-6">
                             <label for="txt_qtde" class="form-label">QTDE:</label>
                             <input
@@ -214,4 +156,3 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
     </div>
   </div>
 </div>
-
