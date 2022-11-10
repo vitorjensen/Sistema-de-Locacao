@@ -249,23 +249,23 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 		
 		
                              
-              <div class="row">
+      <div class="row">
                 
-                <div class="col-md-12">
+      <div class="col-md-12">
                   
-                  <div class="card">
-                  <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color:rgba(67, 89, 113, 0.05);">
-    <div class="container">
+      <div class="card">
+      <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color:rgba(67, 89, 113, 0.05);">
+      <div class="container">
   
       <div class="card shadow h-100 py-2" style="background-color:whitesmoke;">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16" >
-  <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
-</svg> Total no estoque:</div>
+      <div class="card-body">
+          <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16" >
+        <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+        </svg> Total no estoque:</div>
 
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">R$: <?php 
         include_once "../conexao_movimentacao/banco.php"; 
@@ -287,84 +287,115 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
-      </svg>    Produtos cadastrados:</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
-        include_once "../conexao_movimentacao/banco.php"; 
-          $query_valor = "SELECT COUNT(pro_codigo) AS valor_registro FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
-          $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
-          ?></div>
-            </div>
-            <div class="col-auto">
-                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-            </div>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="Black" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                          </svg>   Valor custo:</div>
+                                                                      <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
+                                  include_once "../conexao_movimentacao/banco.php"; 
+                                    $query_valor = "SELECT SUM(pro_custo) AS valor_custo FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                                    $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo number_format($row_valor['valor_custo'], 2, "," , "."); ?>  
+                              </div>
+                                      </div>
+                                      <div class="col-auto">
+                                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+                                                      </div>
+                                                    
+                            
+                                <div class="card  shadow h-100 py-2" style="background-color:whitesmoke;">
+                                <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+                              </svg> Produtos cadastrados:</div>
+                              
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
+                                include_once "../conexao_movimentacao/banco.php"; 
+                                $query_valor = "SELECT COUNT(pro_codigo) AS valor_registro FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                                $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
+                                ?></div>
+                              </div>
+
+                              <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                  </div>
+                              </div>
+                          </div>
+
+             <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
         </div>
-    </div>
-    <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
-        </div>
+
           <div class="card border-left-primary shadow h-100 py-2" style="background-color:whitesmoke;">
           <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
-            </svg>   Quantidade de Produtos:</div>
+          <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+          </svg>   Quantidade de Produtos:</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
-        include_once "../conexao_movimentacao/banco.php"; 
+          include_once "../conexao_movimentacao/banco.php"; 
           $query_valor = "SELECT SUM(pro_qtde) AS valor_qtde FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
           $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_qtde'] ;  
-          ?></div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
-                            </div>
-                           
-                            </div>
-                            
-                            </div>
-                            <br>
+          ?>
+      </div>
+  </div>
+
+                <div class="col-auto">
+              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+    </div>
+  </div>
+</div>
+
+                          <br>
                             
                     <!-- Notifications -->
                     <div class="card">
                     <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal5" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro</font></font></span></span></button>
-  </div>
-                    <br>
+                 </div>
+                <br>
                       
-                    <div class="card">
+        <div class="card">
                   
-    <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
-    <div class="container-fluid">
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample03">
-        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-          <li class="nav-item">
-          <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
-          </li>
+          <div class="collapse navbar-collapse" id="navbarsExample03">
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+              <li class="nav-item">
+              <a href="backup.php" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+  <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
+</svg></a> 
+              </li>
          
-          <li class="nav-item dropdown">
-            <a></a>
-            <ul class="dropdown-menu">
+              <li class="nav-item dropdown">
+              <a></a>
+              <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Nome</a></li>
               
-            </ul>
-          </li>
-        </ul>
-        <div class="box-search"  style="position: relative; right: 10px;">
+              </ul>
+            </li>
+          </ul>
+          <div class="box-search"  style="position: relative; right: 10px;">
           <input class="form-control" type="search" id="pesquisa" placeholder="Pesquisar:" aria-label="Search">
           </div>
           <button class="btn btn-primary"  onclick="searchData()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
         </button>
         </form>
@@ -418,34 +449,43 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
                       <td> <?php echo utf8_encode($dados['pro_tipo']); ?> </td>
                       <td> <?php echo utf8_encode($dados['pro_data_cadastro']); ?> </td>
                      
-                      <td>
-                               </div>
-                               <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" 
-                               data-whatever="<?php echo $dados['alu_codigo']; ?>"
-                               data-whatevernome="<?php echo $dados['pro_codigo'];  ?>"
-                               data-whateverprodutocodigo="<?php echo $dados['pro_codigo'];  ?>"
-                               data-whateverproduto="<?php echo $dados['vem_produto']; ?>"
-                               data-whateverqtde="<?php echo $dados['vem_qtde']; ?>" 
-                               data-whateverrestapagar="<?php echo $dados['vem_resta_pagar']; ?>"
-                               data-whateverpagototal="<?php echo $dados['vem_pago_total']; ?>"
-                               data-whatevertipopagamento="<?php echo $dados['vem_tipo_pagamento']; ?>" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-</svg></button>
+                        <td>
+                     </div>
+
+                   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal13"
+                    data-whateverfantasia="<?php echo $dados['for_fantasia'];  ?>"
+                    data-whateverdescricao="<?php echo $dados['pro_descricao']; ?>"
+                    data-whateverdescricaoadd="<?php echo $dados['pro_descricao_add']; ?>"
+                    data-whatevercusto="<?php echo $dados['pro_custo']; ?>"
+                    data-whateverindice="<?php echo $dados['pro_indice']; ?>"
+                    data-whatevervalor="<?php echo $dados['pro_valor']; ?>"
+                    data-whatevertamanho="<?php echo $dados['pro_tamanho']; ?>"
+                    data-whateveraluguel="<?php echo $dados['pro_aluguel']; ?>"
+                    data-whateverqtde="<?php echo $dados['pro_qtde']; ?>"
+                    data-whatevercor="<?php echo $dados['pro_cor']; ?>"
+                    data-whatevertipo="<?php echo $dados['pro_tipo']; ?>"
+                    data-whateverdatacadastro="<?php echo $dados['pro_data_cadastro']; ?>"
+                  >
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                </svg></button>
 
 
 
-  <a type="button" class="btn btn-secondary"  href="delete_produto.php?pro_codigo=<?php echo $dados['pro_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
-  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-</svg></a>
-                              </div>
-                             </td>
-                           </tr>
-                          </div>
-                        </div>
-                      <?php } ?>
-                      </tbody>
-                  </table>
+                <a type="button" class="btn btn-secondary"  href="delete_produto.php?pro_codigo=<?php echo $dados['pro_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+              </svg></a>
+            </div>
+            </td>
+          </tr>
+        </div>
+      </div>
+    <?php } ?>
+    </tbody>
+</table>
+                      <?php include("includeATUALIZAR.php"); ?>
                       <?php include("includeMODALCAD.php"); ?>
+                      
                     <!-- /Account -->
                   </div>
                   </div>
@@ -474,25 +514,36 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   
   <script type="text/javascript">
-$('#exampleModal').on('show.bs.modal', function (event) {
+$('#exampleModal13').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('whatever')
-  var recipientnome = button.data('whatevernome')
-  var recipientprodutocodigo = button.data('whateverprodutocodigo')
-  var recipientproduto = button.data('whateverproduto')
+  var recipientfantasia = button.data('whateverfantasia')
+  var recipientdescricao = button.data('whateverdescricao')
+  var recipientdescricaoadd = button.data('whateverdescricaoadd')
+  var recipientcusto = button.data('whatevercusto')
+  var recipientindice = button.data('whateverindice')
+  var recipientvalor = button.data('whatevervalor')
+  var recipienttamanho = button.data('whatevertamanho')
+  var recipientaluguel = button.data('whateveraluguel')
   var recipientqtde = button.data('whateverqtde')
-  var recipientrestapagar = button.data('whateverrestapagar')
-  var recipientpagototal = button.data('whateverpagototal')
-  var recipienttipopagamento = button.data('whatevertipopagamento') // Extract info from data-* attributes
+  var recipientcor = button.data('whatevercor')
+  var recipienttipo = button.data('whatevertipo')
+  var recipientdatacadastro = button.data('whateverdatacadastro') // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
-  modal.find('.modal-title').text('Editar de ' + recipientnome)  
-  modal.find('#recipient-codigo').val(recipient)
-  modal.find('#recipient-nome').val(recipientnome)
-  modal.find('#recipient-telefone').val(recipienttelefone)
- 
-
+  modal.find('.modal-title').text('Editar de ' + recipientdescricao  )  
+  modal.find('#recipient-fantasia').val(recipientfantasia)
+  modal.find('#recipient-descricao').val(recipientdescricao)
+  modal.find('#recipient-descricao-add').val(recipientdescricaoadd)
+  modal.find('#recipient-custo').val(recipientcusto)
+  modal.find('#recipient-indice').val(recipientindice)
+  modal.find('#recipient-valor').val(recipientvalor)
+  modal.find('#recipient-tamanho').val(recipienttamanho)
+  modal.find('#recipient-aluguel').val(recipientaluguel)
+  modal.find('#recipient-qtde').val(recipientqtde)
+  modal.find('#recipient-cor').val(recipientcor)
+  modal.find('#recipient-tipo').val(recipienttipo)
+  modal.find('#recipient-data-cadastro').val(recipientdatacadastro)
 })
 </script>
 

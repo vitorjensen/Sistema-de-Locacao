@@ -13,7 +13,7 @@
       </div>
       <hr>
       <div class="modal-body">
-    <form method="POST" id="exampleModal" action="atualizar_vendedor.php" enctype="multipart/form-data">
+    <form method="POST" action="atualizar_vendedor.php" enctype="multipart/form-data">
         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">Nome:</label>
                           <div class="col-sm-10">
@@ -37,7 +37,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-message">Data:</label>
                           <div class="col-sm-10">
-                          <input type="date" id="recipient-datacadastro" name="txt_data_cadastro" class="form-control" placeholder="Digite o campo de data:" aria-label="john.doe" aria-describedby="basic-default-email2">
+                          <input type="date" id="recipient-data-cadastro" name="txt_data_cadastro" class="form-control" placeholder="Digite o campo de data:" aria-label="john.doe" aria-describedby="basic-default-email2">
                           </div>
                         </div>
                         <div class="row justify-content-end">

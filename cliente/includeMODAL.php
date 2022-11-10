@@ -1,111 +1,67 @@
 
-<script language="JavaScript">
-	
-  function mascara(t, mask){
- 
-  var i = t.value.length;
-  var saida = mask.substring(1,0);
-  var texto = mask.substring(i)
-  
-   if (texto.substring(0,1) != saida){
-       t.value += texto.substring(0,1);
-   }
- 
-  }
- 
-  function foco() {
-   document.frm_fornecedor.txt_nome.focus()
- }
- 
- </script>
 
-<div class="modal fade" id="exampleModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
- 
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Novo:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <hr>
-      <div class="modal-body">
-    <form method="POST" id="exampleModal10" action="atualizar_cliente.php" enctype="multipart/form-data">
-    <div class="row">
-                        <div class="mb-3 col-md-6">
-                            <label for="txt_nome" class="form-label">Nome:</label>
-                            <input class="form-control" type="text" name="txt_nome" id="txt_nome" style="background-color: whitesmoke" placeholder="Digite o campo Nome:" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_telefone" class="form-label">Telefone:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_telefone"
-                              name="txt_telefone"
-                              onkeypress="mascara(this, '## #####-####')"
-                              maxlength="13"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Telefone:" 
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_cpf" class="form-label">CPF:</label>
-                            <input class="form-control" type="text" name="txt_cpf" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:" />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_rua" class="form-label">Rua:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_rua"
-                              name="txt_rua"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Rua:" 
-                              
-                            />
-                          </div>
 
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_numero" class="form-label">Número:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_numero"
-                              name="txt_numero"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite no campo Número:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_bairro" class="form-label">Bairro:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_bairro"
-                              name="txt_bairro"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Bairro:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_cidade" class="form-label">Cidade:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_cidade"
-                              name="txt_cidade"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Cidade:" 
-                              
-                            />
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_estado" class="form-label">Estado:</label>
-                            <select id="txt_estado" name="txt_estado" class="select2 form-select" style="background-color: whitesmoke" >
+<div class="modal fade" id="exampleModal13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+ 
+ <div class="modal-dialog modal-xl" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLabel">Novo:</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <hr>
+     <div class="modal-body">
+   <form method="POST" id="exampleModal13" action="atualizar_cliente.php" enctype="multipart/form-data">
+       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-name">Nome:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-nome" name="txt_nome" placeholder="Digite seu nome:">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Telefone:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-telefone" name="txt_telefone"  placeholder="Digite o campo Telefone:">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-email">CPF:</label>
+                         <div class="col-sm-10">
+                           <div class="input-group input-group-merge">
+                             <input type="text" id="recipient-cpf" name="txt_cpf" class="form-control" placeholder="Digite o campo email:" aria-label="john.doe" aria-describedby="basic-default-email2">
+                           </div>
+                         </div>
+                     </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-message">Rua:</label>
+                         <div class="col-sm-10">
+                         <input type="text" id="recipient-rua" name="rua" class="form-control" placeholder="Digite o campo de data:" aria-label="john.doe" aria-describedby="basic-default-email2">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Número:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-numero" name="txt_numero"  placeholder="Digite o campo Número:">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Bairro:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-bairro" name="txt_bairro"  placeholder="Digite o campo Bairro:">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Cidade:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-cidade" name="txt_cidade"  placeholder="Digite o campo Cidade:">
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Estado:</label>
+                         <div class="col-sm-10">
+                         <select id="recipient-estado" name="txt_estado" class="select2 form-select">
                             <option value=""></option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
@@ -135,28 +91,25 @@
                             <option value="TO">TO</option>
                             <option value="DF">DF</option>
                           </select>
-                          </div>
-                          <div class="mb-3 col-md-6">
-                            <label for="txt_complemento" class="form-label">Complemento:</label>
-                            <input
-                              class="form-control"
-                              type="text"
-                              id="txt_complemento"
-                              name="txt_complemento"
-                              style="background-color: whitesmoke"
-                              placeholder="Digite o campo Complemento:" 
-                              
-                            />
-                          </div>
-                      
-      </div>
-      <hr>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-        <button type="submit" class="btn btn-secondary">Cadastrar</button>
-      </div>
-      </form>
-    </div>
-  </div>
+                         </div>
+                       </div>
+                       <div class="row mb-3">
+                         <label class="col-sm-2 col-form-label" for="basic-default-company">Complemento:</label>
+                         <div class="col-sm-10">
+                           <input type="text" class="form-control" id="recipient-complemento" name="txt_complemento"  placeholder="Digite o campo Complemento:">
+                         </div>
+                       </div>
+                       <div class="row justify-content-end">
+                       </div>
+
+     </div>
+     <hr>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+       <button type="submit" class="btn btn-secondary">Atualizar</button>
+     </div>
+     </form>
+   </div>
+ </div>
 </div>
 

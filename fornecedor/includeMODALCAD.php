@@ -173,6 +173,7 @@
       <hr>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="reset" class="btn btn-outline-secondary">Apagar</button>
         <button type="submit" class="btn btn-secondary">Cadastrar</button>
       </div>
       <script>

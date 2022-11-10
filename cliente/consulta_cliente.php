@@ -199,7 +199,9 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           <li class="nav-item">
-          <button type="button" class="btn btn-danger">Consulta</button>
+<a href="backup.php" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+  <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
+</svg></a>          
           </li>
         
 
@@ -250,9 +252,20 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
                             
                           <td>
-                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal13"
+                               data-whatevernome="<?php echo $dados['cli_nome']; ?>"
+                               data-whatevertelefone="<?php echo $dados['cli_telefone'];  ?>"
+                               data-whatevercpf="<?php echo $dados['cli_cpf']; ?>"
+                               data-whateverrua="<?php echo $dados['cli_rua']; ?>"
+                               data-whatevernumero="<?php echo $dados['cli_numero']; ?>"
+                               data-whateverbairro="<?php echo $dados['cli_bairro']; ?>"
+                               data-whatevercidade="<?php echo $dados['cli_cidade']; ?>"
+                               data-whateverestado="<?php echo $dados['cli_estado']; ?>"
+                               data-whatevercomplemento="<?php echo $dados['cli_complemento']; ?>">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
   <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-</svg></button>
+</svg>
+</button>
                           <a type="button" class="btn btn-secondary"  href="delete_cliente.php?cli_codigo=<?php echo $dados['cli_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 </svg></a> 
@@ -264,9 +277,9 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 <?php } ?>
 </tbody>
 </table>
-
-<?php include("includeMODALCAD.php"); ?>
 <?php include("includeMODAL.php"); ?>
+<?php include("includeMODALCAD.php"); ?>
+
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -306,6 +319,35 @@ function searchData()
    window.location = 'consulta_cliente.php?search='+search.value; 
 }
 
+</script>
+
+<script type="text/javascript">
+$('#exampleModal13').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipientnome = button.data('whatevernome')
+  var recipienttelefone = button.data('whatevertelefone')
+  var recipientcpf = button.data('whatevercpf')
+  var recipientrua = button.data('whateverrua')
+  var recipientnumero = button.data('whatevernumero')
+  var recipientbairro = button.data('whateverbairro')
+  var recipientcidade = button.data('whatevercidade')
+  var recipientestado = button.data('whateverestado')
+  var recipientcomplemento = button.data('whatevercomplemento')
+// Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Editar de ' + recipientnome)  
+  modal.find('#recipient-nome').val(recipientnome)
+  modal.find('#recipient-telefone').val(recipienttelefone)
+  modal.find('#recipient-cpf').val(recipientcpf)
+  modal.find('#recipient-rua').val(recipientrua)
+  modal.find('#recipient-numero').val(recipientnumero)
+  modal.find('#recipient-bairro').val(recipientbairro)
+  modal.find('#recipient-cidade').val(recipientcidade)
+  modal.find('#recipient-estado').val(recipientestado)
+  modal.find('#recipient-complemento').val(recipientcomplemento)
+})
 </script>
   </body>
   

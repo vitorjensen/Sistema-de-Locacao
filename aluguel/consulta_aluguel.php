@@ -1,16 +1,11 @@
 <?PHP
 require_once('../conexao/banco.php');
 
-$cons_codigo = isset($_REQUEST['txt_cons_codigo']) ? $_REQUEST['txt_cons_codigo'] : '';
+$cons_codigo = isset($_REQUEST['search']) ? $_REQUEST['search'] : '';
 
 
-if(!empty($_GET['search']))
-{ 
- $data = $_GET['search'];
- $sql = "SELECT * FROM tb_aluguel WHERE alu_status LIKE '%$data%'  ORDER BY alu_codigo";
-}
-else
-{
+
+
 
   $sql = "select 
 	a.alu_codigo,
@@ -36,10 +31,10 @@ else
   from tb_aluguel a
   inner join tb_cliente c on (a.cli_codigo = c.cli_codigo)
   inner join tb_produto p on (a.pro_codigo = p.pro_codigo)
-        where a.alu_codigo like '%".$cons_codigo."%'
+        where a.alu_status like '%".$cons_codigo."%'
        ";
        
-}
+
 
 $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
@@ -263,13 +258,22 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                 
                     <!-- Notifications -->
                     <div class="card">
-                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal3" tabindex="0"  type="button"><span><i class="bx bx-plus me-2"></i> <span class="d-none d-lg-inline-block"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionar novo registro (<?php
-        include_once "../conexao_movimentacao/banco.php"; 
-          $query_valor = "SELECT COUNT(alu_codigo) AS valor_registro FROM tb_aluguel"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
-          $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
-          ?>)</font></font></span></span></button>
-  </div>
-  <br>
+
+                    <button class="dt-button create-new btn btn-primary" data-toggle="modal" data-target="#exampleModal10" tabindex="0"  type="button">
+                      <span><i class="bx bx-plus me-2"></i> 
+                      <span class="d-none d-lg-inline-block">
+                        <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Adicionar novo registro (<?php include_once "../conexao_movimentacao/banco.php"; 
+                            $query_valor = "SELECT COUNT(alu_codigo) AS valor_registro FROM tb_aluguel"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                            $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
+                          ?>)
+                        </font>
+                      </font>
+                      </span>
+                      </span>
+                    </button>
+              </div>
+              <br>
                   
                     <div class="card">
     <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color: lightgray">
@@ -282,7 +286,9 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
           <li class="nav-item">
-          <button type="button" class="btn btn-danger" style="margin: 3px;">Consulta</button>
+          <a href="backup.php" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-arrow-up-fill" viewBox="0 0 16 16">
+  <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 5.146a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2z"/>
+</svg></a> 
           </li>
           
         
@@ -308,7 +314,7 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
       </select>
           </div>
           
-          <button class="btn btn-primary" onclick="searchData()">
+          <button class="btn btn-primary" id="pesquisa1" onclick="searchData()">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
@@ -367,20 +373,43 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                             <td> <?php echo $dados['alu_tipo_pagamento']; ?> </td>
                             <td> <?php echo $dados['ven_nome']; ?> </td>
                             <td> <?php echo $dados['alu_observacao']; ?> </td>
-                            <td> <?php echo $dados['alu_status']; ?> </td>
+                            <td> <?php echo $dados['alu_status'];  ?> </td>
 
                             <td>
                                </div>
 
-                               <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
-  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
-</svg></button>
+                               <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal11"
+                               data-whatevernome="<?php echo $dados['cli_nome']; ?>"
+                               data-whatevertelefone="<?php echo $dados['cli_telefone'];  ?>"
+                               data-whatevercpf="<?php echo $dados['cli_cpf']; ?>"
+                               data-whateverdatainicial="<?php echo $dados['alu_data_inicial']; ?>"
+                               data-whateverdatafinal="<?php echo $dados['alu_data_final']; ?>"
+                               data-whatevercodigoproduto="<?php echo $dados['pro_codigo']; ?>"
+                               data-whateverdescricao="<?php echo $dados['pro_descricao']; ?>"
+                               data-whateverqtde="<?php echo $dados['alu_qtde']; ?>"
+                               data-whatevervalor="<?php echo $dados['alu_valor']; ?>"
+                               data-whatevervalorsinal="<?php echo $dados['alu_valor_sinal']; ?>"
+                               data-whateverrestapagar="<?php echo $dados['alu_resta_pagar']; ?>"
+                               data-whateverpagototal="<?php echo $dados['alu_pago_total']; ?>"
+                               data-whatevertipopagamento="<?php echo $dados['alu_tipo_pagamento']; ?>"
+                               data-whatevervendedor="<?php echo $dados['ven_nome']; ?>"
+                               data-whateverstatus="<?php echo $dados['alu_status']; ?>">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                               </svg>
+                              </button>
+
+                              
+       
 
 
 
   <a type="button" class="btn btn-secondary"  href="delete_aluguel.php?alu_codigo=<?php echo $dados['alu_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
   <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 </svg></a>
+                              </div>
+
                               </div>
                              </td>
                            </tr>
@@ -389,8 +418,9 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                       <?php } ?>
                       </tbody>
                   </table>
-                  <?php include("includeMODALCAD.php"); ?>  
+                  
                   <?php include("includeATUALIZAR.php"); ?>
+                  <?php include("includeMODALCAD.php"); ?>  
                   
 <!--- Fim do primeiro modal edit --->    
 
@@ -406,7 +436,7 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
 
     <script src="../assets/vendor/js/menu.js"></script>
 
-   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  
 
     <!-- endbuild -->
 
@@ -418,12 +448,12 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
     <!-- Page JS -->
 
     <!-- Place this tag in your head or just before your close body tag. -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  
 
+  
 <script>
 
 var search = document.getElementById('pesquisa');
@@ -444,5 +474,48 @@ function searchData()
 
 </script>
 
+
+<script type="text/javascript">
+$('#exampleModal11').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipientnome = button.data('whatevernome')
+  var recipienttelefone = button.data('whatevertelefone')
+  var recipientcpf = button.data('whatevercpf')
+  var recipientdatacadastro = button.data('whateverdatacadastro')
+  var recipientdatainicial = button.data('whateverdatainicial')
+  var recipientdatafinal = button.data('whateverdatafinal')
+  var recipientcodigoproduto = button.data('whatevercodigoproduto')
+  var recipientdescricao = button.data('whateverdescricao')
+  var recipientqtde = button.data('whateverqtde')
+  var recipientvalor = button.data('whatevervalor')
+  var recipientvalorsinal = button.data('whatevervalorsinal')
+  var recipientrestapagar = button.data('whateverrestapagar')
+   var recipientpagototal = button.data('whateverpagototal')
+  var recipienttipopagamento = button.data('whatevertipopagamento')
+  var recipientvendedor = button.data('whatevervendedor')
+  var recipientstatus = button.data('whateverstatus')
+// Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Editar de ' + recipientnome)  
+  modal.find('#recipient-nome').val(recipientnome)
+  modal.find('#recipient-telefone').val(recipienttelefone)
+  modal.find('#recipient-cpf').val(recipientcpf)
+  modal.find('#recipient-data-inicial').val(recipientdatainicial)
+  modal.find('#recipient-data-final').val(recipientdatafinal)
+  modal.find('#recipient-codigo-produto').val(recipientcodigoproduto)
+  modal.find('#recipient-descricao').val(recipientdescricao)
+  modal.find('#recipient-qtde').val(recipientqtde)
+  modal.find('#recipient-valor').val(recipientvalor)
+  modal.find('#recipient-valor-sinal').val(recipientvalorsinal)
+  modal.find('#recipient-resta-pagar').val(recipientrestapagar)
+  modal.find('#recipient-pago-total').val(recipientpagototal)
+  modal.find('#recipient-tipo-pagamento').val(recipienttipopagamento)
+  modal.find('#recipient-vendedor').val(recipientvendedor)
+  modal.find('#recipient-status').val(recipientstatus)
+
+})
+</script>
   </body>
 </html>

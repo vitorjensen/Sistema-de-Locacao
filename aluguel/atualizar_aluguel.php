@@ -3,34 +3,45 @@ require_once("../conexao/banco.php");
 
 $id 	= $_REQUEST['txt_codigo'];
 
-$codigo      = $_REQUEST['txt_codigo'];
-$pessoa = $_REQUEST['txt_pessoa'];
-$cnpj = $_REQUEST['txt_cnpj'];
-$razao = $_REQUEST['txt_razao'];
-$fantasia = $_REQUEST['txt_fantasia'];
-$endereco = $_REQUEST['txt_endereco'];
-$numero = $_REQUEST['txt_numero'];
-$cidade = $_REQUEST['txt_cidade'];
-$estado = $_REQUEST['txt_estado'];
+$codigo = $_REQUEST['txt_codigo'];
+$nome = $_REQUEST['txt_nome'];
 $telefone = $_REQUEST['txt_telefone'];
-$data_cadastro = $_REQUEST['txt_data_cadastro'];
+$cpf = $_REQUEST['txt_cpf'];
+$data_inicial = $_REQUEST['txt_data_inicial'];
+$data_final = $_REQUEST['txt_data_final'];
+$codigo_produto = $_REQUEST['txt_codigo_produto'];
+$descricao = $_REQUEST['txt_descricao'];
+$qtde = $_REQUEST['txt_qtde'];
+$valor = $_REQUEST['txt_valor'];
+$valor_sinal = $_REQUEST['txt_valor_sinal'];
+$resta_pagar = $_REQUEST['txt_resta_pagar'];
+$pago_total = $_REQUEST['txt_pago_total'];
+$tipo_pagamento = $_REQUEST['txt_tipo_pagamento'];
+$vendedor = $_REQUEST['txt_vendedor'];
+$status = $_REQUEST['txt_status'];
 
-$sql = "update tb_fornecedor set 
+$sql = "update tb_aluguel set 
 
-        for_pessoa = '$pessoa',
-        for_cnpj = '$cnpj',
-        for_razao = '$razao',
-        for_fantasia = '$fantasia',
-        for_endereco = '$endereco',
-        for_numero = '$numero',
-        for_cidade = '$cidade',
-        for_estado = '$estado',
-        for_telefone = '$telefone',
-        for_data_cadastro = '$data_cadastro'
+        alu_codigo = '$codigo',
+        cli_nome = '$nome',
+        cli_telefone = '$telefone',
+        cli_cpf = '$cpf',
+        alu_data_inicial = '$data_inicial',
+        alu_data_final = '$data_final',
+        pro_codigo = '$codigo_produto',
+        alu_descricao = '$descricao',
+        alu_qtde = '$qtde',
+        alu_valor = '$valor',
+        alu_valor_sinal = '$valor_sinal'
+        alu_resta_pagar = '$resta_pagar',
+        alu_pago_total = '$pago_total',
+        alu_tipo_pagamento = '$tipo_pagamento',
+        ven_nome = '$vendedor',
+        alu_status = '$status'
 				where 
-					for_codigo = '$id'";
+					alu_codigo = '$id'";
 								
 mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
-header("Location: consulta_fornecedor.php");
+header("Location: consulta_aluguel.php");
 ?>

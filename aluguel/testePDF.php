@@ -37,42 +37,46 @@ $dompdf->loadHtml('
           </u>
        
     </div>
-    <form>               
+    <form>            
     <div class="row">
     <div class="mb-3 col-md-7" style="background-color: #fffdd0;">
                           <label for="txt_nome" class="form-label">Cód:</label> 
-                          
+                          <span>01</span>
                           </div>
                           <br>
                           <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px; background-color: #fffdd0;">
                             <label for="txt_nome" class="form-label">Nome:</label>
-
+                            <span>Juliana</span>
                             </div>
                             <div class="mb-3 col-md-6" style="background-color: #fffdd0;">
                             <label for="txt_nome" class="form-label">Cidade:</label>
+                            <span>Nova Odessa</span>
                             </div>
                             <br>
                               <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -38px;  background-color: #fffdd0;">
                                 <label for="txt_telefone" class="form-label">Endereço:</label>
+                                <span>Rua Amélia</span>
                               </div>
                           
                               <div class="row" style="padding-left: 355px; padding-top: -78px;">
                               <div class="mb-3 col-md-7" style="">
                             <label for="txt_nome" class="form-label">Tel:</label>
-                              
+                            <span>19 99576-3455</span>
                             </div>
                             <br>
                             <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px;">
                               <label for="txt_nome" class="form-label">CPF:</label>
-                              
+                              <span>123.876.453-20</span>
                               </div>
                               <div class="mb-3 col-md-6" style="">
                               <label for="txt_nome" class="form-label">Nº:</label>
+                              <span>500</span>
                               
                       </div>
                       <br>
                         <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -37px;">
                           <label for="txt_telefone" class="form-label">Bairro:</label>
+                          <span>Jd das Flores</span>
                         </div>
                         </div> 
                         <hr>
@@ -95,6 +99,49 @@ $dompdf->loadHtml('
                         <strong>Cláusula 13</strong> – E por estarem justos e acordados, firma o presente contrato em 02 (duas) vias de igual teor e forma, ficando eleito o Foro da Comarca de Americana/SP para dirimir quaisquer dúvidas que possam surgir.<br>	
          
                         </div>
+<br>
+                        <form>            
+    <div class="row">
+    <div class="mb-3 col-md-7" style="background-color: #fffdd0;">
+                          <label for="txt_nome" class="form-label">Cód:</label> 
+                        
+                          </div>
+                          <br>
+                          <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px; background-color: #fffdd0;">
+                            <label for="txt_nome" class="form-label">Nome:</label>
+                            
+                            </div>
+                            <div class="mb-3 col-md-6" style="background-color: #fffdd0;">
+                            <label for="txt_nome" class="form-label">Cidade:</label>
+                            
+                            </div>
+                            <br>
+                              <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -38px;  background-color: #fffdd0;">
+                                <label for="txt_telefone" class="form-label">Endereço:</label>
+                                
+                              </div>
+                          
+                              <div class="row" style="padding-left: 355px; padding-top: -78px;">
+                              <div class="mb-3 col-md-7" style="">
+                            <label for="txt_nome" class="form-label">Tel:</label>
+                            
+                            </div>
+                            <br>
+                            <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px;">
+                              <label for="txt_nome" class="form-label">CPF:</label>
+                              
+                              </div>
+                              <div class="mb-3 col-md-6" style="">
+                              <label for="txt_nome" class="form-label">Nº:</label>
+                             
+                              
+                      </div>
+                      <br>
+                        <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -37px;">
+                          <label for="txt_telefone" class="form-label">Bairro:</label>
+                         
+                        </div>
+                        </div> 
 ');
 
   $dompdf->render();

@@ -49,8 +49,8 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Senha</label>
-
-                  </div>
+</div>
+                
                   <div class="input-group input-group-merge">
                     <input
                       type="password"
@@ -63,13 +63,21 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <hr>
-                <div class="mb-3">
+                <div class="row justify-content-end">
+                        </div>
  
-                  <button type="submit" class="btn btn-primary d-grid w-100">Cadastrar</button>
-                </div>
+      </div>
+      <hr>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-secondary">Cadastrar</button>
+      </div>
       </form>
     </div>
   </div>
 </div>
+
+
+
+
 

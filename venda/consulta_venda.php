@@ -267,19 +267,11 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
                             <td> <?php echo  utf8_encode($dados['ven_nome']); ?> </td>
                             <td> <?php echo  utf8_encode($dados['vem_observacao']); ?> </td>
                             <td>
-                      <div class="dropdow">
-                      <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                     <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="form_atualizar_vendedor.php?ven_codigo=<?php echo $dados['ven_codigo']; ?>">
-                    <i class="bx bx-edit-alt me-2"></i> Editar</a
-                     >
-                     <a class="dropdown-item" href="delete_venda.php?vem_codigo=<?php echo $dados['vem_codigo']; ?>" onclick="excluir_registro(event)">
-                    <i class="bx bx-trash me-2"></i> Apagar</a    
-                     >
-                               </div>
-                               <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" 
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal9"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+  <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+</svg></button>
+
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" 
                                data-whatever="<?php echo utf8_encode($dados['vem_codigo']); ?>"
                                data-whatevernome="<?php echo utf8_encode ($dados['cli_nome']);  ?>"
                                data-whateverprodutocodigo="<?php echo utf8_encode ($dados['pro_codigo']);  ?>"
@@ -291,6 +283,12 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
   <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
   <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
 </svg></button>
+
+  <a type="button" class="btn btn-secondary"  href="delete_aluguel.php?alu_codigo=<?php echo $dados['alu_codigo']; ?>" onclick="excluir_registro(event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg></a>
+                               </div>
+
                               </div>
                              </td>
                            </tr>
@@ -311,21 +309,29 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
       <hr>
       <div class="modal-body">
                         <table class="table"><tbody><tr data-dt-row="99" data-dt-column="2">
-                          <td>id:</td> 
+                          <td>Código:</td> 
                           <td>100</td>
                         </tr>
                         <tr data-dt-row="99" data-dt-column="3">
-                          <td>Name:</td> 
+                          <td>Nome:</td> 
                           <td>
                             <div class="d-flex justify-content-start align-items-center">
                               <div class="avatar-wrapper">
                                 <div class="avatar me-2">
-                                  <span class="avatar-initial rounded-circle bg-label-info">GG</span>
+                                  <span class="avatar-initial rounded-circle bg-label-info">VJ</span>
                                 </div>
                               </div>
-                              <div class="d-flex flex-column"><span class="emp_name text-truncate">Glyn Giacoppo</span>
+                              <div class="d-flex flex-column"><span class="emp_name text-truncate">Vitor Jensen</span>
                               <small class="emp_post text-truncate text-muted">Software Test Engineer</small>
-                            </div></div></td></tr><tr data-dt-row="99" data-dt-column="4"><td>Email:</td> <td>ggiacoppo2r@apache.org</td></tr><tr data-dt-row="99" data-dt-column="5"><td>Date:</td> <td>04/15/2021</td></tr><tr data-dt-row="99" data-dt-column="6"><td>Salary:</td> <td>$24973.48</td></tr><tr data-dt-row="99" data-dt-column="7"><td>Status:</td> <td><span class="badge rounded-pill  bg-label-success">Professional</span></td></tr><tr data-dt-row="99" data-dt-column="8"><td>Actions:</td> <td><div class="d-inline-block"><a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></a><ul class="dropdown-menu dropdown-menu-end"><li><a href="javascript:;" class="dropdown-item">Details</a></li><li><a href="javascript:;" class="dropdown-item">Archive</a></li><div class="dropdown-divider"></div><li><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></li></ul></div><a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="bx bxs-edit"></i></a></td></tr></tbody></table></div></div></div>
+                            </div></div></td></tr><tr data-dt-row="99" data-dt-column="4"><td>Telefone:</td> 
+                            <td>vitorjensen6@gmail.com</td>
+                          </tr>
+                          <tr data-dt-row="99" data-dt-column="5"><td>CPF:</td> <td>234.456.787-30</td></tr><tr data-dt-row="99" data-dt-column="6">
+                            <td>Data Inicial:</td> 
+                            <td>04/09/2022</td>
+                          </tr><tr data-dt-row="99" data-dt-column="7">
+                            
+                            </td></tr><tr data-dt-row="99" data-dt-column="8"><td>Ações:</td> <td><div class="d-inline-block"><a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="bx bx-dots-vertical-rounded"></i></a><ul class="dropdown-menu dropdown-menu-end"><li><a href="javascript:;" class="dropdown-item">Details</a></li><li><a href="javascript:;" class="dropdown-item">Archive</a></li><div class="dropdown-divider"></div><li><a href="javascript:;" class="dropdown-item text-danger delete-record">Delete</a></li></ul></div><a href="javascript:;" class="btn btn-sm btn-icon item-edit"><i class="bx bxs-edit"></i></a></td></tr></tbody></table></div></div></div>
 
     </div>
 
