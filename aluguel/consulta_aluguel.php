@@ -1,5 +1,5 @@
 <?PHP
-require_once('../conexao/banco.php');
+require_once('../conexao_movimentacao/banco.php');
 
 $cons_codigo = isset($_REQUEST['search']) ? $_REQUEST['search'] : '';
 
@@ -252,9 +252,114 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
 			<div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
 		</div>
 
-              <div class="row">
+    <div class="row">
+                
                 <div class="col-md-12">
-                  
+                            
+                <div class="card">
+                <nav class="navbar navbar-expand-sm navbar-dark" aria-label="Third navbar example" style="background-color:rgba(67, 89, 113, 0.05);">
+                <div class="container">
+            
+                <div class="card shadow h-100 py-2" style="background-color:whitesmoke;">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16" >
+                  <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+                  </svg> Total no estoque:</div>
+          
+                                                      <div class="h5 mb-0 font-weight-bold text-gray-800">R$: <?php 
+                  include_once "../conexao_movimentacao/banco.php"; 
+                    $query_valor = "SELECT SUM(pro_qtde * pro_custo) AS valor_estoque FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                    $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo number_format($row_valor['valor_estoque'], 2, "," , "."); ?>
+                                   </div>
+                                                  </div>
+                                                  <div class="col-auto">
+                                                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+                                      </div>
+                                    
+                                      
+                                      <div class="card  shadow h-100 py-2" style="background-color:whitesmoke;">
+                                          <div class="card-body">
+                                              <div class="row no-gutters align-items-center">
+                                                  <div class="col mr-2">
+                                                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="Black" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                      <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                    </svg>   Valor custo:</div>
+                                                                                <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
+                                            include_once "../conexao_movimentacao/banco.php"; 
+                                              $query_valor = "SELECT SUM(pro_custo) AS valor_custo FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                                              $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo number_format($row_valor['valor_custo'], 2, "," , "."); ?>  
+                                        </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+                                                                </div>
+                                                              
+                                      
+                                          <div class="card  shadow h-100 py-2" style="background-color:whitesmoke;">
+                                          <div class="card-body">
+                                          <div class="row no-gutters align-items-center">
+                                          <div class="col mr-2">
+                                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+          
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+                                        </svg> Produtos cadastrados:</div>
+                                        
+                                          <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
+                                          include_once "../conexao_movimentacao/banco.php"; 
+                                          $query_valor = "SELECT COUNT(pro_codigo) AS valor_registro FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                                          $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_registro'] ;  
+                                          ?></div>
+                                        </div>
+          
+                                        <div class="col-auto">
+                                              <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+          
+                       <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+                  </div>
+          
+                    <div class="card border-left-primary shadow h-100 py-2" style="background-color:whitesmoke;">
+                    <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="black" class="bi bi-box-seam-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+                    </svg>   Quantidade de Produtos:</div>
+                                                      <div class="h5 mb-0 font-weight-bold text-gray-800">Total: <?php
+                    include_once "../conexao_movimentacao/banco.php"; 
+                    $query_valor = "SELECT SUM(pro_qtde) AS valor_qtde FROM tb_produto"; $result_valor = $conn->prepare($query_valor); $result_valor->execute();
+                    $row_valor = $result_valor->fetch(PDO::FETCH_ASSOC); echo $row_valor['valor_qtde'] ;  
+                    ?>
+                </div>
+            </div>
+          
+                          <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                      </div>
+                    </div>
+                  </div>
+                <div class="back-color-5" style="position:absolute;bottom:0px;left:0px;width:100%;height:7px"></div>
+              </div>
+            </div>
+          </div>
+                  <br>
                 
                     <!-- Notifications -->
                     <div class="card">
@@ -357,7 +462,7 @@ $sql2 = mysqli_query($con, $sql2) or die ("Erro na sql!") ;
   <path fill-rule="evenodd" d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zM4.165 13.668c.09.18.23.343.438.419.207.075.412.04.58-.03.318-.13.635-.436.926-.786.333-.401.683-.927 1.021-1.51a11.651 11.651 0 0 1 1.997-.406c.3.383.61.713.91.95.28.22.603.403.934.417a.856.856 0 0 0 .51-.138c.155-.101.27-.247.354-.416.09-.181.145-.37.138-.563a.844.844 0 0 0-.2-.518c-.226-.27-.596-.4-.96-.465a5.76 5.76 0 0 0-1.335-.05 10.954 10.954 0 0 1-.98-1.686c.25-.66.437-1.284.52-1.794.036-.218.055-.426.048-.614a1.238 1.238 0 0 0-.127-.538.7.7 0 0 0-.477-.365c-.202-.043-.41 0-.601.077-.377.15-.576.47-.651.823-.073.34-.04.736.046 1.136.088.406.238.848.43 1.295a19.697 19.697 0 0 1-1.062 2.227 7.662 7.662 0 0 0-1.482.645c-.37.22-.699.48-.897.787-.21.326-.275.714-.08 1.103z"/>
 </svg></a>
 
-<?php echo $dados['alu_codigo']; ?> </td> 
+                            <td><?php echo $dados['alu_codigo']; ?> </td> 
                             <td> <?php echo $dados['cli_nome']; ?> </td> 
                             <td> <?php echo $dados['cli_telefone']; ?> </td>
                             <td> <?php echo $dados['cli_cpf']; ?> </td>

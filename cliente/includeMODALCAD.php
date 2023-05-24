@@ -14,11 +14,57 @@
   }
  
   function foco() {
-   document.frm_fornecedor.txt_nome.focus()
+   document.frm_cliente.txt_nome.focus()
  }
  
- </script>
+ function validar_dados() {
+	if(document.frm_cliente.txt_nome.value=="") {
+        alert ("Você deve preencher o campo nome!");
+		document.frm_cliente.txt_nome.focus();
 
+        return false;
+  }
+        if(document.frm_cliente.txt_telefone.value=="") {
+        alert ("Você deve preencher o campo Telefone");
+		document.frm_cliente.txt_telefone.focus();
+
+        return false;
+        }
+
+ if(document.frm_cliente.txt_cpf.value=="") {
+        alert ("Você deve preencher o campo CPF");
+		document.frm_cliente.txt_cpf.focus();
+
+        return false;
+ }
+        if(document.frm_cliente.txt_rua.value=="") {
+        alert ("Você deve preencher o campo Rua");
+		document.frm_cliente.txt_rua.focus();
+
+        return false;
+  }
+  if(document.frm_fornecedor.txt_cel.value=="") {
+        alert ("Você deve preencher o campo celular");
+		document.frm_fornecedor.txt_nascimento.focus();
+
+        return false;
+  }
+  if(document.frm_fornecedor.txt_cel.value=="") {
+        alert ("Você deve preencher o campo celular");
+		document.frm_fornecedor.txt_nascimento.focus();
+
+        return false;
+  }
+  if(document.frm_fornecedor.txt_cel.value=="") {
+        alert ("Você deve preencher o campo celular");
+		document.frm_fornecedor.txt_nascimento.focus();
+
+        return false;
+  }
+ }
+</script>
+
+<body onload="foco()">
 <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">
  
   <div class="modal-dialog modal-xl" role="document">
@@ -31,7 +77,7 @@
       </div>
       <hr>
       <div class="modal-body">
-    <form method="POST" id="exampleModal6" action="cadastrar_cliente.php" enctype="multipart/form-data">
+    <form  method="POST" name="frm_cliente" action="cadastrar_cliente.php" enctype="multipart/form-data">
     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label for="txt_nome" class="form-label">Nome:</label>
@@ -52,7 +98,7 @@
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_cpf" class="form-label">CPF:</label>
-                            <input class="form-control" type="text" name="txt_cpf" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:" />
+                            <input class="form-control" type="text" name="txt_cpf" onblur="checkCPF(this.value)" data-mask="000.000.000-00" id="txt_cpf" style="background-color: whitesmoke" placeholder="Digite o campo CPF:" />
                           </div>
                           <div class="mb-3 col-md-6">
                             <label for="txt_rua" class="form-label">Rua:</label>
@@ -153,9 +199,10 @@
       <hr>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-        <button type="submit" class="btn btn-secondary">Cadastrar</button>
+        <button type="submit" class="btn btn-secondary" onclick="return validar_dados()">Cadastrar</button>
       </div>
-      </form>
+</form>
+</body>
     </div>
   </div>
 </div>

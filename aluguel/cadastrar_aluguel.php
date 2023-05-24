@@ -21,6 +21,8 @@ $sql = "insert into tb_aluguel (cli_codigo, alu_data_inicial, alu_data_final, pr
 
 mysqli_query($con, $sql) or die ("Erro na sql!") ;
 
+
+
 header("Location: consulta_aluguel.php");
 
 ?>

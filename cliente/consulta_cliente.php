@@ -106,19 +106,19 @@ $sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
     <script src="../assets/js/config.js"></script>
 
 
-    <script type="text/javascript">
-    
-        function excluir_registro( ) {
-            if( !confirm('Deseja realmente excluir este registro?') 
-        ){
-            if( window.event)
-                window.event.returnValue=false;
-            else
-                e.preventDefault();
-         }
-        }
-    
-    </script>
+      <script type="text/javascript">
+      
+          function excluir_registro( ) {
+              if( !confirm('Deseja realmente excluir este registro?') 
+          ){
+              if( window.event)
+                  window.event.returnValue=false;
+              else
+                  e.preventDefault();
+          }
+          }
+      
+      </script>
   </head>
 
   <body>

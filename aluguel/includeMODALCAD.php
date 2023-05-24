@@ -161,6 +161,7 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
                               placeholder="Digite o Resta Pagar:"
                             />
                           </div>
+                        
                           <div class="mb-3 col-md-6">
                             <label for="txt_pago_total" class="form-label">Pago Total:</label>
                             <select id="txt_pago_total" name="txt_pago_total" class="select2 form-select" style="background-color: whitesmoke">
@@ -219,7 +220,6 @@ $sql3 = mysqli_query($con, $sql3) or die ("Erro na sql!") ;
         <button type="submit" class="btn btn-secondary">Cadastrar</button>
       </div>
       </form>
-
    </div>
  </div>
 </div>

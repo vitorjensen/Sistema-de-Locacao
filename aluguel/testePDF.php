@@ -1,22 +1,24 @@
 <?php
-require_once('../conexao/banco.php');
-$id = $_REQUEST['alu_codigo'];
+ $usuario = "root";
+ $senha = "";
+ $dbname = "dblocar";
 
-$sql = "select * from tb_aluguel where alu_codigo = '$id'";
-$sql = mysqli_query($con, $sql) or die ("Erro na sql!") ;
+// use true se quiser remover caracteres que não sejam utf-8
+ $checkUtf = true;
+ 
 
-$dados = mysqli_fetch_array($sql);
+ $con = mysqli_connect("localhost","root","","dblocar");
+ mysqli_select_db($con, $dbname) or die(mysqli_connect_errno());
 
+ $id = "1";
+ $result_usuario = "SELECT * FROM tb_aluguel, tb_cliente WHERE alu_codigo = '$id' LIMIT 1";
+ $resultado_usuario = mysqli_query($con, $result_usuario);
+ while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
+  echo $row_usuario['alu_codigo'];
 
-/*
-$html = "";
-
- $result_transacoes = "SELECT * FROM tb_aluguel";
- $resultado_transacoes = mysqli_query($con, $result_transacoes);
- while($row_transacoes = mysqli_fetch_assoc($resultado_transacoes)) {
-   $html .= $row_transacoes['cli_nome'] . "<br>";
  }
-*/
+
+
 use Dompdf\Dompdf;
 require_once 'dompdf/autoload.inc.php';
 
@@ -40,43 +42,42 @@ $dompdf->loadHtml('
     <form>            
     <div class="row">
     <div class="mb-3 col-md-7" style="background-color: #fffdd0;">
-                          <label for="txt_nome" class="form-label">Cód:</label> 
-                          <span>01</span>
+                          <label for="txt_nome" class="form-label">Cód:</label>
                           </div>
                           <br>
                           <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px; background-color: #fffdd0;">
                             <label for="txt_nome" class="form-label">Nome:</label>
-                            <span>Juliana</span>
+                            
                             </div>
                             <div class="mb-3 col-md-6" style="background-color: #fffdd0;">
                             <label for="txt_nome" class="form-label">Cidade:</label>
-                            <span>Nova Odessa</span>
+                            
                             </div>
                             <br>
                               <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -38px;  background-color: #fffdd0;">
                                 <label for="txt_telefone" class="form-label">Endereço:</label>
-                                <span>Rua Amélia</span>
+                              
                               </div>
                           
                               <div class="row" style="padding-left: 355px; padding-top: -78px;">
                               <div class="mb-3 col-md-7" style="">
                             <label for="txt_nome" class="form-label">Tel:</label>
-                            <span>19 99576-3455</span>
+                          
                             </div>
                             <br>
                             <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px;">
                               <label for="txt_nome" class="form-label">CPF:</label>
-                              <span>123.876.453-20</span>
+                             
                               </div>
                               <div class="mb-3 col-md-6" style="">
                               <label for="txt_nome" class="form-label">Nº:</label>
-                              <span>500</span>
+                             
                               
                       </div>
                       <br>
                         <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -37px;">
                           <label for="txt_telefone" class="form-label">Bairro:</label>
-                          <span>Jd das Flores</span>
+                          
                         </div>
                         </div> 
                         <hr>
@@ -102,46 +103,36 @@ $dompdf->loadHtml('
 <br>
                         <form>            
     <div class="row">
-    <div class="mb-3 col-md-7" style="background-color: #fffdd0;">
-                          <label for="txt_nome" class="form-label">Cód:</label> 
+    <div class="mb-3 col-md-7" style="background-color: whitesmoke;">
+                          <label for="txt_nome" class="form-label">Tamanho:</label> 
                         
                           </div>
                           <br>
-                          <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px; background-color: #fffdd0;">
-                            <label for="txt_nome" class="form-label">Nome:</label>
+                          <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px; background-color: whitesmoke;">
+                            <label for="txt_nome" class="form-label">Cor:</label>
                             
                             </div>
-                            <div class="mb-3 col-md-6" style="background-color: #fffdd0;">
-                            <label for="txt_nome" class="form-label">Cidade:</label>
+                            <div class="mb-3 col-md-6" style="background-color: whitesmoke;">
+                            <label for="txt_nome" class="form-label">Valor:</label>
                             
                             </div>
                             <br>
-                              <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -38px;  background-color: #fffdd0;">
-                                <label for="txt_telefone" class="form-label">Endereço:</label>
+                              <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -38px;  background-color: whitesmoke;">
+                                <label for="txt_telefone" class="form-label">Sinal:</label>
                                 
                               </div>
                           
                               <div class="row" style="padding-left: 355px; padding-top: -78px;">
                               <div class="mb-3 col-md-7" style="">
-                            <label for="txt_nome" class="form-label">Tel:</label>
+                            <label for="txt_nome" class="form-label">Descrição:</label>
                             
                             </div>
                             <br>
-                            <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -40px;">
-                              <label for="txt_nome" class="form-label">CPF:</label>
-                              
-                              </div>
                               <div class="mb-3 col-md-6" style="">
-                              <label for="txt_nome" class="form-label">Nº:</label>
-                             
-                              
+                              <label for="txt_nome" class="form-label">Restante:</label>  
                       </div>
-                      <br>
-                        <div class="mb-3 col-md-6" style="padding-left: 175px; padding-top: -37px;">
-                          <label for="txt_telefone" class="form-label">Bairro:</label>
-                         
-                        </div>
                         </div> 
+                        <hr>
 ');
 
   $dompdf->render();
